@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Better code through Code Reviews - Rubygeek</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Better code through Code Reviews" />
+<meta property="og:description" content="For one of my projects we have started doing code reviews. We use github, work in a branch, then submit a pull request for review. Looking at github you can see a nice diff of the changes and you are able to add comments. So github is one way. You could also just use
+git diff master..myawesomebranch And get a decent diff.
+I prefer to code review live if the other person is available in person (screensharing would work too)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rubygeek.com/post/2012-10-16-better-code-through-code-reviews/" />
+<meta property="article:published_time" content="2012-10-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2012-10-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Better code through Code Reviews"/>
+<meta name="twitter:description" content="For one of my projects we have started doing code reviews. We use github, work in a branch, then submit a pull request for review. Looking at github you can see a nice diff of the changes and you are able to add comments. So github is one way. You could also just use
+git diff master..myawesomebranch And get a decent diff.
+I prefer to code review live if the other person is available in person (screensharing would work too)."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/main.css" />
+
+	
+		<script src="http://rubygeek.comjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="http://rubygeek.com">Rubygeek</a></h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">16</span>
+							<span class="rest">Oct 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Better code through Code Reviews</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>For one of my projects we have started doing code reviews. We use github, work in a branch, then submit a pull request for review. Looking at github you can see a nice diff of the changes and you are able to add comments. So github is one way. You could also just use</p>
+<pre><code>git diff  master..myawesomebranch 
+</code></pre><p>And get a decent diff.</p>
+<p>I prefer to code review live if the other person is available in person (screensharing would work too). It makes it easy to ask why this, and did you consider this and then after discussion you can make a note of what to change.</p>
+<p>Its super easy to nit pick at someones code, after all programming is alot of your personal style. But there are sometimes where you say &ldquo;umm ok thats different, cool lets move on&rdquo; and sometimes where you can say &ldquo;hmm, what do you think of this instead&rdquo; like for example</p>
+<pre><code>  unless something == &quot;something&quot; &amp;&amp; !this.method(that) do
+     // this awesome thing
+  end
+</code></pre><p>yes it works (but I didn't question if it works or not, I'm thinking of humans reading this code later!), but lets consider:</p>
+<pre><code>  if something != &quot;something&quot; &amp;&amp; this.method(that) do
+     // this awesome thing
+  end
+</code></pre><p>I think its a little more readable, but when I make suggestions I like to open the door for discussion, and perhaps I don't understand all the code and it gives the other person to explain it. Sometimes they answer with &ldquo;oh well i didn't write that part&rdquo; .. That is OK!! when I do a code review I am taking it as you saying &ldquo;hey this code was my responsibility, I added some code, fixed some confusing parts and submit it you for review.&rdquo;</p>
+<p>I rarely do git blame to see who did something because it doesn't matter most of the time who did that weird bit of code. Most likely it was a build up of code and the author didn't stop to think about refactoring, or he/she was under time constraints. That's the normal evolution of programming and we are trying to break that habit with reviews. But if I find a confusing bit of code that I can't figure out, then maybe I'll do git blame to see who last edited that so I can go to them and ask for some help in understanding it. Coding is never a perfect process. This is why code reviews are good.</p>
+<p>I like code reviews alot and have done them at a few different companies and with people having the right attitudes it goes a long way to making better code.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+</body>
+</html>

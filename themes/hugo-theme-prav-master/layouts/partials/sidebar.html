@@ -1,0 +1,33 @@
+<!-- SIDEBAR -->
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>About Me</h3>
+        <div style="text-align: center;">
+            <p><em>{{ .Site.Params.Tagline }}</em></p>
+        </div>
+
+        <h3>Latest Articles</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                {{ range first 10 (where .Site.RegularPages "Type" "in" site.Params.mainSections) }}
+                <li class="pure-menu-item">
+                    <a href="{{ .Permalink }}" class="pure-menu-link">{{ .Title }}<br>
+                        <small>{{ .Description }}</small>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+
+        <h3>Categories</h3>
+        <div style="text-align:center">
+            {{ range $.Site.Taxonomies.categories.ByCount }}
+            {{ if gt .Count 1 }}
+            <a href="/categories/{{ .Name }}"><button class="pure-button pure-button-primary"> {{ .Name }}
+                <small>({{ .Count }})</small></button></a>
+            {{ end }}
+            {{end}}
+        </div>
+    </div> <!-- pad -->
+</div> <!-- sidebar -->

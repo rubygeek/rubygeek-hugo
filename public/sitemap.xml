@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/automation/</loc>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018-07-22-browser-automation-what-to-test/</loc>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/jenkins/</loc>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/robot-framework/</loc>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018-07-05-my-robot-framework-setup/</loc>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/testing/</loc>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018-04-09-setting-up-jenkins-for-robot-framework/</loc>
+    <lastmod>2018-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018-03-09-contributing-to-open-source/</loc>
+    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/interviews/</loc>
+    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/job-search/</loc>
+    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/learning/</loc>
+    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/open-source/</loc>
+    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/practice/</loc>
+    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/clojure/</loc>
+    <lastmod>2018-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018-01-17-cool-things-in-clojure-1-dot-9/</loc>
+    <lastmod>2018-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018-01-03-one-liners-clojure-ruby/</loc>
+    <lastmod>2018-01-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ruby/</loc>
+    <lastmod>2018-01-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-12-27-getting-started-with-clojure-is-now-easier-than-ever-mac/</loc>
+    <lastmod>2017-12-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-12-26-data-structures-in-clojure-and-elixir-structs-records/</loc>
+    <lastmod>2017-12-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/elixir/</loc>
+    <lastmod>2017-12-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-12-21-data-structures-in-clojure-and-elixir-maps/</loc>
+    <lastmod>2017-12-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-12-17-data-structures-in-clojure-and-elixir-sets/</loc>
+    <lastmod>2017-12-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-12-13-data-structures-in-clojure-and-elixir-lists-tuples-vectors/</loc>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-12-10-managing-my-tasks/</loc>
+    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/productivity/</loc>
+    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/time-management/</loc>
+    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/career/</loc>
+    <lastmod>2017-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-06-11-what-i-wished-i-knew/</loc>
+    <lastmod>2017-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-06-06-interview-prep/</loc>
+    <lastmod>2017-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-06-04-coding-on-car-trips/</loc>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/podcasts/</loc>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/python/</loc>
+    <lastmod>2017-05-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-05-23-tagging-in-robot-framework/</loc>
+    <lastmod>2017-05-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-05-21-automation-testing-with-robot-framework/</loc>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-05-14-my-favorite-tech-podcasts/</loc>
+    <lastmod>2017-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/javascript/</loc>
+    <lastmod>2017-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-03-16-using-jshint/</loc>
+    <lastmod>2017-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-03-10-ruby-like-python/</loc>
+    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017-02-04-setting-up-new-ruby-project/</loc>
+    <lastmod>2017-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2016-03-13-records-in-clojure/</loc>
+    <lastmod>2016-03-13T08:22:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2015-12-12-two-cool-tools-for-clojure-development/</loc>
+    <lastmod>2015-12-12T14:43:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2015-08-30-book-review-clojure-applied/</loc>
+    <lastmod>2015-08-30T21:12:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/books/</loc>
+    <lastmod>2015-08-30T21:12:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2015-08-02-enumerable-got-any/</loc>
+    <lastmod>2015-08-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2015-06-27-simple-api-backend-for-development-with-atoms/</loc>
+    <lastmod>2015-06-27T20:52:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2015-06-06-exploring-arrays-part-6/</loc>
+    <lastmod>2015-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2015-04-18-using-lein-try-to-learn-prismatic-schema/</loc>
+    <lastmod>2015-04-18T15:13:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2014-10-06-testing-routes-with-rspec-and-minitest/</loc>
+    <lastmod>2014-10-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2014-09-19-leveling-up-on-rspec/</loc>
+    <lastmod>2014-09-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2014-08-28-exploring-arrays-part-5/</loc>
+    <lastmod>2014-08-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2014-03-09-book-review-application-testing-with-capybara/</loc>
+    <lastmod>2014-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/capybara/</loc>
+    <lastmod>2014-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/cucumber/</loc>
+    <lastmod>2014-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2013-10-13-getting-better-at-practice/</loc>
+    <lastmod>2013-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2013-09-02-exploring-arrays-part-4/</loc>
+    <lastmod>2013-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2013-04-27-exploring-arrays-part-3/</loc>
+    <lastmod>2013-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2013-03-11-exploring-arrays-part-2/</loc>
+    <lastmod>2013-03-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2013-02-23-exploring-arrays-part-1/</loc>
+    <lastmod>2013-02-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2013-01-13-reading-books-cover-to-cover/</loc>
+    <lastmod>2013-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2012-11-20-simple-breadcrumbs/</loc>
+    <lastmod>2012-11-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/design-patterns/</loc>
+    <lastmod>2012-10-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2012-10-17-using-active-model-to-validate-input/</loc>
+    <lastmod>2012-10-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2012-10-16-better-code-through-code-reviews/</loc>
+    <lastmod>2012-10-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/legacy-code/</loc>
+    <lastmod>2012-10-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2012-09-13-caps-in-ruby-are-constants/</loc>
+    <lastmod>2012-09-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2012-09-06-playing-with-rubykoans/</loc>
+    <lastmod>2012-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2012-09-03-trying-out-emberjs/</loc>
+    <lastmod>2012-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2012-08-28-digging-through-sludge/</loc>
+    <lastmod>2012-08-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2012-02-26-screen-multiplexing-productivity/</loc>
+    <lastmod>2012-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2011-07-16-adding-an-application-config-file-to-a-rails-project/</loc>
+    <lastmod>2011-07-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2011-07-10-practicing-ruby-with-railscasts/</loc>
+    <lastmod>2011-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2011-01-23-creating-a-image-gallery-in-jquery/</loc>
+    <lastmod>2011-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/css/</loc>
+    <lastmod>2011-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/jquery/</loc>
+    <lastmod>2011-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/java/</loc>
+    <lastmod>2011-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2011-01-22-koan-a-copia/</loc>
+    <lastmod>2011-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/scala/</loc>
+    <lastmod>2011-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2010-07-16-getting-around-with-gnu-screen/</loc>
+    <lastmod>2010-07-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2010-06-22-ruby-debug/</loc>
+    <lastmod>2010-06-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2010-03-24-css-frameworks-comparison/</loc>
+    <lastmod>2010-03-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/devchix/</loc>
+    <lastmod>2010-03-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2010-03-24-finding-ada-through-devchix/</loc>
+    <lastmod>2010-03-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/git/</loc>
+    <lastmod>2010-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2010-02-17-gitting-better-with-git/</loc>
+    <lastmod>2010-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/pairs/</loc>
+    <lastmod>2010-02-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2010-02-11-remote-pair-programming/</loc>
+    <lastmod>2010-02-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2009-11-29-haml-in-my-camel/</loc>
+    <lastmod>2009-11-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2009-11-24-builder-pattern-in-ruby/</loc>
+    <lastmod>2009-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2009-11-22-builder-pattern-in-java/</loc>
+    <lastmod>2009-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2009-09-20-i-like-tomatos-i-like-time/</loc>
+    <lastmod>2009-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2009-09-08-how-to-get-better-at-programming/</loc>
+    <lastmod>2009-09-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2008-05-14-git-peepcode-review/</loc>
+    <lastmod>2008-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2008-04-21-code-review-rspec-tests/</loc>
+    <lastmod>2008-04-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/rspec/</loc>
+    <lastmod>2008-04-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2007-07-27-weirdness-and-coolness-in-rails/</loc>
+    <lastmod>2007-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/perl/</loc>
+    <lastmod>2007-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2007-04-12-right-tool-for-the-right-job/</loc>
+    <lastmod>2007-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2007-02-09-compiling-ruby-1-dot-8-5-on-ubuntu-or-im-not-afraid-of-make/</loc>
+    <lastmod>2007-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2006-05-23-towel-day/</loc>
+    <lastmod>2006-05-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2006-04-15-never-a-dull-moment/</loc>
+    <lastmod>2006-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/php/</loc>
+    <lastmod>2006-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2006-01-26-response-to-test-freak/</loc>
+    <lastmod>2006-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2006-01-25-test-freak/</loc>
+    <lastmod>2006-01-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+  </url>
+  
+</urlset>

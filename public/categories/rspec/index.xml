@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rspec on </title>
+    <link>/categories/rspec/</link>
+    <description>Recent content in rspec on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 21 Apr 2008 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/rspec/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Code Review: Rspec Tests</title>
+      <link>/post/2008-04-21-code-review-rspec-tests/</link>
+      <pubDate>Mon, 21 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2008-04-21-code-review-rspec-tests/</guid>
+      <description>I am writing a rails application for my mom to enter her bakery orders for her business. The Order page has a form to search or add a new customer, so i can streamline the process as much as possible. In the Order create method, I either get a customer array or a customer ID.
+Here&#39;s the order create method in the controller:
+def create new_customer = params[:order][:customer_id].blank? ? true : false if new_customer @customer = Customer.</description>
+    </item>
+    
+  </channel>
+</rss>

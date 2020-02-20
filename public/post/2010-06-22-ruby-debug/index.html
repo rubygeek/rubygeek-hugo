@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Ruby-Debug - Rubygeek</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Ruby-Debug" />
+<meta property="og:description" content="I never really used a debugger until I did Java. Before that I did what was called &ldquo;PHP Debugging&rdquo; which is littering your code with print statements until you figure out what you need to know, then going back and making sure you deleted them! In php I sometimes would put a unique string like
+print &ldquo;QWE&rdquo; . $myawesomevar
+Or something like that, then going back and searching your code for QWE (just picked something that was easy to type!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rubygeek.com/post/2010-06-22-ruby-debug/" />
+<meta property="article:published_time" content="2010-06-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2010-06-22T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ruby-Debug"/>
+<meta name="twitter:description" content="I never really used a debugger until I did Java. Before that I did what was called &ldquo;PHP Debugging&rdquo; which is littering your code with print statements until you figure out what you need to know, then going back and making sure you deleted them! In php I sometimes would put a unique string like
+print &ldquo;QWE&rdquo; . $myawesomevar
+Or something like that, then going back and searching your code for QWE (just picked something that was easy to type!"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/main.css" />
+
+	
+		<script src="http://rubygeek.comjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="http://rubygeek.com">Rubygeek</a></h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">22</span>
+							<span class="rest">Jun 2010</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Ruby-Debug</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>I never really used a debugger until I did Java. Before that I did what was called &ldquo;PHP Debugging&rdquo; which is littering your code with print statements until you figure out what you need to know, then going back and making sure you deleted them! In php I sometimes would put a unique string like</p>
+<p>print &ldquo;QWE&rdquo; . $myawesomevar</p>
+<p>Or something like that, then going back and searching your code for QWE (just picked something that was easy to type!). But all that gets rather annoying. They might have nice debuggers for PHP now, I haven't really done php in 4-5 years. I really didn't understand the power of breakpoints until I did java and I thought that was pretty cool. Now that I do all ruby, I sort of miss eclipse (I didn't actually think I'd ever say that&hellip;) since all I use right now is textmate and vi which don't have the built debugger support that eclipse does. Some of the newer ruby editors might, I haven't spent any research on them.</p>
+<p>I found ruby-debug and it works great! You can set a breakpoint and then climb inside your application and peek around and see what is going on. I've done this in controllers and even in test mode.</p>
+<p>If you use passenger, you can still use it but its a little tricky to setup. This <!-- raw HTML omitted -->blog post<!-- raw HTML omitted --> from duckpunching.com  has some neat tips and a rake task to make it easier. Be sure to start the rdebug -c  from the console after you have set a breakpoint and reloaded your page.</p>
+<p>If you are using passenger, you can't use the irb command inside of the ruby-debug console, but I found that most of the time just being able to poke around the variable space inside my app has been enough for me to understand what is going on.</p>
+<p>There are quite a few commands available in the debug console, but these are the ones I've used:</p>
+<ul>
+<li>help - view the list of commands</li>
+<li>l list  -  this shows context around the current line the debugger is on</li>
+<li>n next - moves to the next line</li>
+<li>p print - print a variable</li>
+<li>irb  jump to console - I dont use this very often and it doesn't work if you are using passenger</li>
+<li>c cont - continue to end of breakpoint or end of page load, after I have seen what I want to see I do this to get out of the console</li>
+</ul>
+<p>Resources</p>
+<!-- raw HTML omitted -->
+<p>Anyways, hope some of you find it useful and happy debugging :)</p>
+<p>Update: I wrote this in preparation for a short talk at <!-- raw HTML omitted -->AustinOnRails<!-- raw HTML omitted --> while giving the talk, the group had some suggestions:</p>
+<p>put in a ~/.rdebugrc</p>
+<pre><code>set autoeval
+set autolist
+</code></pre><p>autolist - will run list command when you enter
+autoeval - will eval each line, so instead of &ldquo;eval @profile&rdquo; to get it to print, it will automatically eval</p>
+<p>doing  m [object] can show methods in a nice table format. Thats cool, i have often gone to irb and did String.methods.sort but that is kinda hard to read.</p>
+<p>Anyways, good stuff!</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+</body>
+</html>

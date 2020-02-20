@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Book Review - Clojure Applied - Rubygeek</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Book Review - Clojure Applied" />
+<meta property="og:description" content="Clojure Applied &ndash; Written by Alex Miller and Ben Vangrift.
+I am a junkie for books and Clojure books are no exception. I have been doing Clojure since Jan 2014 and feel like I kinda got the hang of it but now what? When I saw Clojure Applied &ldquo;From Practice to Practitioner&rdquo; was being written I kept a close eye on Pragmatic Programmer&#39;s coming soon list and an eye on twitter." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rubygeek.com/post/2015-08-30-book-review-clojure-applied/" />
+<meta property="article:published_time" content="2015-08-30T21:12:57+00:00" />
+<meta property="article:modified_time" content="2015-08-30T21:12:57+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Book Review - Clojure Applied"/>
+<meta name="twitter:description" content="Clojure Applied &ndash; Written by Alex Miller and Ben Vangrift.
+I am a junkie for books and Clojure books are no exception. I have been doing Clojure since Jan 2014 and feel like I kinda got the hang of it but now what? When I saw Clojure Applied &ldquo;From Practice to Practitioner&rdquo; was being written I kept a close eye on Pragmatic Programmer&#39;s coming soon list and an eye on twitter."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/main.css" />
+
+	
+		<script src="http://rubygeek.comjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="http://rubygeek.com">Rubygeek</a></h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">30</span>
+							<span class="rest">Aug 2015</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Book Review - Clojure Applied</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p><a href="http://amzn.to/2qO825o">Clojure Applied</a> &ndash; Written by <a href="https://twitter.com/puredanger">Alex Miller</a> and <a href="https://twitter.com/bvandgrift">Ben Vangrift</a>.</p>
+<p>I am a junkie for books and Clojure books are no exception. I have been doing Clojure since Jan 2014 and feel like I kinda got the hang of it but now what? When I saw <em>Clojure Applied &ldquo;From Practice to Practitioner&rdquo;</em> was being written I kept a close eye on Pragmatic Programmer's coming soon list and an eye on twitter. The day I heard the beta book was available I bought it. When I was offered a free copy to do this review, I said thanks but I already have it and I'll still be happy to write a review. :)</p>
+<p>I was not disappointed as I dived into the book, this is just the thing I needed. Here's is how to do clojure for the real world with real application of clojure’s concepts applied.</p>
+<p>This book is in 3 parts:</p>
+<ul>
+<li>Foundations</li>
+<li>Applications</li>
+<li>Practices</li>
+</ul>
+<h2 id="foundations">Foundations</h2>
+<h3 id="chapter-1-modeling-your-domain">Chapter 1: Modeling your Domain</h3>
+<p>This section covers aspects of your application including modeling your domain using maps and record and when to use each of those. Getting your mind around immutable data is one of the hardest parts for me in getting into clojure and the discussion on entities here really helped solidify the concepts. Once your data is modeled you want to do operations, in OOP languages you have polymorphism. In clojure there are multi methods and protocols. Here are examples of each and when you would use them.</p>
+<h3 id="chapter-2-collecting-and-organizing-your-data">Chapter 2: Collecting and organizing your data.</h3>
+<p>This chapter talks about collections and which one to use and how to write a custom sorting function. Then it goes on to talk about updating data - wait I thought data was immutable in clojure? It is, so when you update a collection it returns a new copy with the data updated. Its typical of mutable functions to end in ! (danger Will Robinson!), This chapter closes with how to define a &ldquo;new&rdquo; datatype and what is involved there.</p>
+<h3 id="chapter-3-processing-sequential-data">Chapter 3: Processing Sequential Data</h3>
+<p>This chapter starts with explaining how sequences are an abstraction connecting collections and the functions that act on those collection. This is the really beauty of clojure and at first mind blowing then once it sinks in, you can imagine how you could have thought differently about the concept. Reducing, Filtering, Selection, Sorting, Removing Duplicates and grouping are all operations you will want to do on your collection once you have it.</p>
+<h2 id="applications">Applications</h2>
+<h3 id="chapter-4-state-identity-and-change">Chapter 4: State, Identity, and Change</h3>
+<p>Change, if our applications couldn’t change they would be boring, probably even useless. If you need more than one change at a time, you should use a transaction. Different data types (atom, ref, etc) have different functions to update and this goes over each of them in detail.</p>
+<h3 id="chapter-5-use-your-cores">Chapter 5: Use your cores</h3>
+<p>This chapter talks about threads and introduces the concept of agents and promises to transfer a value from one state to the other. The talk about using reducers to process data in parallel and the performance considerations. Ending with with discussion about thinking in process using channels in core.async to create a sort of a pipeline for processing data. More meat to this chapter than I can summarize here.</p>
+<h3 id="chapter-6-creating-components">Chapter 6: Creating Components</h3>
+<p>One of my favorite chapters. Now that you have your structure and processing down, how to combine it into something we can put in a package with a nice bow? There are a few ways to organize this and the first is a namespace. You want to use one or more for your code so it is easily read and comprehended. The chapter goes over some common namespaces used in project and what might go into those. You can connect your components with channels and structure their lifecycle with a record and functions to make start and stop. Leading to the next chapter&hellip;</p>
+<h3 id="chapter-7-compose-your-application">Chapter 7: Compose your Application</h3>
+<p>Composing your application! Early in the chapter it starts talking about <a href="https://github.com/stuartsierra/component">Stuart Sierra's</a> library name precisely that. Component. It’s like the previous chapter laid the foundation of why, and now this is how. Then putting those into a system and using profiles and configs to make your code operate in different environments (dev, staging etc).</p>
+<h2 id="practice">Practice</h2>
+<h3 id="chapter-8-testing-clojure">Chapter 8: Testing Clojure</h3>
+<p>Ok maybe this is my favorite chapter. My love of testing has been equated with &ldquo;sickness&rdquo; for loving tests so much.  This chapter kicks off with repl-based testing, by developing your function and calling it in the repl to work out the inputs/outputs. Then moving on to example based testing which I know as unit testing. The new part to me is in Clojure are &ldquo;are&rdquo; test function which can easily test a lot of short tests. Testing exceptions is also a thing which is mentioned briefly. Then some other features of clojure test are fixtures, a handy way to provide baseline data for testing. The section ends with a mention of &lsquo;Expections&rsquo; test library which takes a different approach than &lsquo;clojure.test&rsquo;. This chapter ends with talking about property based testing and generators, which if you don’t know about them will blow your mind and leaving you wondering why we haven’t been testing this way all along, :)</p>
+<h3 id="chapter-9-formatting-data">Chapter 9: Formatting Data</h3>
+<p>This chapter seems shorter compared to the other chapters, talking about edn, son and transit. The first two I get and using them in clojure is awesome. But Transit, the authors follow the explanation with a concrete example, I think I get it but I will need to use it in a project for it to really sink in.</p>
+<h3 id="chapter-10-getting-out-the-door">Chapter 10: Getting out the Door</h3>
+<p>This is where it talks about publishing your code and deployment. A few things to think about when publishing your code is to choose the collaboration platform (Github, Bitbucket etc), the contributing agreements and licensing and the minimum files you should have in your repo. When your code is ready to be published as a library most people use Clojars, Maven Central Repository or a self hosted Maven repo. The last part of this chapter is deploying your application to heroku or provisioning your own server by running a jar or to deploying to an application server.</p>
+<h2 id="appendix">Appendix</h2>
+<p>This contains two sections: Roots which talks about some of the concepts and Thinking in Clojure which describes the mindset of how clojure is written and what I think community strives to be like.</p>
+<p>Overall this is a fantastic book and I’ve tried to summarize the key points to help you make the decision if this book would help you in your clojure career. I bet it will! :) Go <a href="http://amzn.to/2qO825o">Buy it!</a></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+</body>
+</html>

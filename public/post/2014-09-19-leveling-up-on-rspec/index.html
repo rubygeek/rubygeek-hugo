@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Leveling up on Rspec - Rubygeek</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Leveling up on Rspec" />
+<meta property="og:description" content="The other day I saw there was a Rspec option in .rspec I didn&#39;t know about and I thought what else do I not know about Rspec? I set myself to dig around in the command line options and source code to see if I could figure out anything else cool. Here are a few of the things I&#39;ve learned:
+Require all the time This is what triggered my curiosity, finding this in ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rubygeek.com/post/2014-09-19-leveling-up-on-rspec/" />
+<meta property="article:published_time" content="2014-09-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-09-19T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leveling up on Rspec"/>
+<meta name="twitter:description" content="The other day I saw there was a Rspec option in .rspec I didn&#39;t know about and I thought what else do I not know about Rspec? I set myself to dig around in the command line options and source code to see if I could figure out anything else cool. Here are a few of the things I&#39;ve learned:
+Require all the time This is what triggered my curiosity, finding this in ."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/main.css" />
+
+	
+		<script src="http://rubygeek.comjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="http://rubygeek.com">Rubygeek</a></h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">19</span>
+							<span class="rest">Sep 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Leveling up on Rspec</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>The other day I saw there was a Rspec option in <code>.rspec</code> I didn't know about and I thought what else do I not know about Rspec? I set myself to dig around in the command line options and source code to see if I could figure out anything else cool. Here are a few of the things I've learned:</p>
+<h3 id="require-all-the-time">Require all the time</h3>
+<p>This is what triggered my curiosity, finding this in <code>.rspec</code>:</p>
+<pre><code>--require spec_helper
+</code></pre><p>This will add that require to the top of all your test files, and since all your test files have that require at the top, this cleans up the tests files (and you dont forget it to add it). Cool right? This should go in <code>.rspec</code> in the project folder.</p>
+<h3 id="local-options">Local Options</h3>
+<p>I knew about <code>~/.rspec</code> (in your home directory) and <code>.rspec</code> (in the root of project directory), but digging around in the Rspec source there is also <code>.rspec-local</code> which looks to be the place to put personal preferences for the current project. I imagine this might be useful if the team wanted to use a certain formatter and you liked a different one. According to repo this was added 2 years ago, I had no idea! This would be one of the files you would put in your <code>.gitignore</code>.</p>
+<h3 id="dry-run">Dry Run</h3>
+<p>Want to see how your wording looks with the format documentation (I like to make it read like a happy ending story).</p>
+<p>Use this</p>
+<pre><code>rspec --dry-run -f documentation
+</code></pre><p>You can also add this into a config file, but most likely you'll just want to run it occasionally so command line is the way to go here.</p>
+<h3 id="fail-fast">Fail Fast</h3>
+<p>Tired of running the test suite and seeing some pass and some fail, but having to wait till all the tests are done? Add <code>--fail-fast</code> to your command line (or <code>.rspec-local</code>) to have the tests stop after the first failure. This is one option I think would be good to keep in local since it might be personal preference.</p>
+<h3 id="run-one-test">Run one test</h3>
+<p>There are many ways to tell Rspec that you want to just run a single test:</p>
+<p>Passing <code>--example</code> and the name of the test (it &ldquo;test name&rdquo;)</p>
+<pre><code>rspec --example &quot;should group in words of 3&quot;
+</code></pre><p>Or just enough of the name to make it unique. Also you can use -e instead of &ndash;example</p>
+<pre><code>rspec -e &quot;should group in&quot;
+</code></pre><p>Or you can specify the line number, but be aware this might change as you modify line above this.</p>
+<pre><code>rspec spec/lib/memory_spec.rb:11
+</code></pre><h3 id="run-focus-test">Run Focus Test</h3>
+<p>An alternative to Run one test is to use the focus. First set it up in the <code>spec_helper</code> to run only the focus: true if it exists anywhere, otherwise it runs all the specs so you can totally leave this in the spec_helper file all the time if you like it!</p>
+<pre><code># in spec_helper.rb
+config.filter_run :focus
+</code></pre><p>Then in your test add <code>focus: true</code> after the name, like so:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">it <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">should group in words of 3</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">focus</span>: <span style="color:#66d9ef">true</span> <span style="color:#66d9ef">do</span>
+</code></pre></div><p>I think in future I am going to use focus: true if i am running tests on the command line as I develop them, would make it easier then running the test name or line number because those might change as I develop.</p>
+<h3 id="test-formatters">Test Formatters</h3>
+<p>The default report style for Rspec is fine, I like format &ndash;documentation and some time ago I found this one by Tim Pope <a href="https://github.com/tpope/fivemat">Fivemat</a>. Add that to your gem file then add in your Rspec config &lsquo;fivemat&rsquo;</p>
+<pre><code>add to .rspec 
+--format Fivemat
+or specify on command line
+rspec -f Fivemat
+</code></pre><p>Looks like this:</p>
+<pre><code>Memory ............
+User ......
+Address ..
+</code></pre><p>Name of the class, plus a green dot for each passing test. Also for test failures there is less noise so this is a favorite of mine.</p>
+<p>Update, added: <a href="http://www.mattsears.com/articles/2011/11/16/nyan-cat-rspec-formatter">NyanCat Formatter</a></p>
+<p>I certainly feel like I've Leveled Up my Rspec and hope you have too! :) Code on!!</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Exploring Arrays - Part 1 - Rubygeek</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Exploring Arrays - Part 1" />
+<meta property="og:description" content="Everytime that I have to lookup something with hashes or arrays, I find lots of methods that I didn&#39;t know about, so I thought I&#39;d do an experiment where I will learn about each one and write some examples and try to understand how to use it. I kind of picture someone sitting next to me as I do this, reading the docs and trying them out with me.
+Ruby 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rubygeek.com/post/2013-02-23-exploring-arrays-part-1/" />
+<meta property="article:published_time" content="2013-02-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-02-23T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Exploring Arrays - Part 1"/>
+<meta name="twitter:description" content="Everytime that I have to lookup something with hashes or arrays, I find lots of methods that I didn&#39;t know about, so I thought I&#39;d do an experiment where I will learn about each one and write some examples and try to understand how to use it. I kind of picture someone sitting next to me as I do this, reading the docs and trying them out with me.
+Ruby 1."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/main.css" />
+
+	
+		<script src="http://rubygeek.comjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="http://rubygeek.com">Rubygeek</a></h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">23</span>
+							<span class="rest">Feb 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Exploring Arrays - Part 1</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Everytime that I have to lookup something with hashes or arrays, I find lots of methods that I didn't know about, so I thought I'd do an experiment where I will learn about each one and write some examples and try to understand how to use it. I kind of picture someone sitting next to me as I do this, reading the docs and trying them out with me.</p>
+<p><a href="http://www.ruby-doc.org/core-1.9.3/Array.html">Ruby 1.9.3 Array Documentation</a></p>
+<h2 id="class-methods">Class Methods</h2>
+<p>Class methods always start with the name of the class, dot, followed by method name. For example, we can
+call Time.now as a class method on the Time class, which returns a new Time object initialized with the current time.</p>
+<p>Docs say:</p>
+<h2 id="args">[](*args)</h2>
+<pre><code>[](*args)
+Returns a new array populated with the given objects.
+</code></pre>
+<p>There are three usage examples in the docs, lets try them out and see what they do, first:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> Array<span style="color:#f92672">.</span>[](<span style="color:#ae81ff">1</span><span style="color:#f92672"></span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> Array<span style="color:#f92672">.</span>[](<span style="color:#ae81ff">1</span><span style="color:#f92672"></span>,<span style="color:#ae81ff">2</span><span style="color:#f92672"></span>,<span style="color:#ae81ff">3</span><span style="color:#f92672"></span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">2</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+</code></pre></div><p>The method name is [] and the params is *args which is the splat operator which takes any number of objects. Interesting I've never seen this used in the real world. I am sure its used cleverly, I just don't see it! I showed this to a friend <a href="http://daniellesucher.com">Danielle Sucher</a> and she said:</p>
+<!-- raw HTML omitted -->
+<p>Thanks!! Moving on..</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> Array<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;a&#39;</span>,<span style="color:#e6db74">&#39;b&#39;</span>,<span style="color:#e6db74">&#39;c&#39;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">c</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>Returns array with the contents of *args just as it says. This is one way you can be &ldquo;confident&rdquo; of your code as Avdi talked about in <a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=T8J0j2xJFgQ#!">Confident Coding</a> . If you want an array, make sure its an array! if its not an array it will put it inside an array like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> Array(<span style="color:#ae81ff">1</span><span style="color:#f92672"></span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> Array(<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+</code></pre></div><p>Parentheses is optional in ruby so these are the same:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> Array <span style="color:#ae81ff">1</span>
+<span style="color:#f92672"></span><span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> Array <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> Array(<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span>,<span style="color:#ae81ff">2</span><span style="color:#f92672"></span>,<span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>) <span style="color:#f92672">==</span> Array<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span>,<span style="color:#ae81ff">2</span><span style="color:#f92672"></span>,<span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">true</span>
+</code></pre></div><p>Looks funny without the () doesn't? I almost always use () for methods. Helps later on if you decided to add more things on that line you don't have to go back and add them. See <a href="http://devblog.avdi.org/rubytapas-episode-list/">Avdi's RubyTapas Episode 024 Incidental Change</a> $9 a month screencasts that come out 3x week, so good!! Sign up now! :)</p>
+<p>And lastly, the way you might normally create arrays, with [ *args ]. I tried to dig through Kernel to see if [] was a method on kernel that would call Array.new but I couldn't find anything. So I am still puzzled about how this actually works. Maybe a reader has an insight?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span>,<span style="color:#ae81ff">2</span><span style="color:#f92672"></span>,<span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">2</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+</code></pre></div><h2 id="arraynew">Array.new</h2>
+<pre><code>new(size=0, obj=nil)
+new(array)
+new(size) {|index| block }
+Returns a new array.
+</code></pre>
+<p>So if no params, default is size 0 and value of index 0 is nil</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> a <span style="color:#f92672">=</span> Array<span style="color:#f92672">.</span>new 
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> a<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">nil</span>
+</code></pre></div><p>Creates an empty array. Default value is nil.</p>
+<p>If you pass a single param, it makes an array of that size.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> a <span style="color:#f92672">=</span> Array<span style="color:#f92672">.</span>new(<span style="color:#ae81ff">5</span><span style="color:#f92672"></span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">nil</span>, <span style="color:#66d9ef">nil</span>, <span style="color:#66d9ef">nil</span>, <span style="color:#66d9ef">nil</span>, <span style="color:#66d9ef">nil</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> a<span style="color:#f92672">.</span>size
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>
+<span style="color:#f92672"></span></code></pre></div><p>Creates an array with 5 elements with the default value is nil</p>
+<p>If we pass two params, the second is the default value of the empty elements</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> a <span style="color:#f92672">=</span> Array<span style="color:#f92672">.</span>new(<span style="color:#ae81ff">5</span><span style="color:#f92672"></span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-empty-</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-empty-</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-empty-</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-empty-</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-empty-</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-empty-</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> a<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-empty-</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">&gt;&gt;</span> a<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-empty-</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">&gt;&gt;</span> a<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672"></span><span style="color:#f92672">]</span><span style="color:#f92672">.</span>object_id <span style="color:#f92672">==</span> a<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">]</span><span style="color:#f92672">.</span>object_id
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">true</span>
+</code></pre></div><p>So the default value of each element is the string &ldquo;-empty-&rdquo; and they are in fact the same object.</p>
+<p>Lets create an array of basic family members, adding it to her_side and his_side. Then I added another family member to his_side and prove they are copies of the parents and not the same object.</p>
+<p>Second version is passing an array to Array</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> parents <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">mom</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">dad</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">mom</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">dad</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> her_side <span style="color:#f92672">=</span> Array<span style="color:#f92672">.</span>new(parents)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">mom</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">dad</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> his_side <span style="color:#f92672">=</span> Array<span style="color:#f92672">.</span>new(parents)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">mom</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">dad</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> her_side <span style="color:#f92672">==</span> his_side
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">&gt;&gt;</span> his_side <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">grandma</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">mom</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">dad</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">grandma</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> her_side <span style="color:#f92672">==</span> his_side
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">false</span>
+</code></pre></div><p>And finally the third form uses a block:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> b <span style="color:#f92672">=</span> Array<span style="color:#f92672">.</span>new(<span style="color:#ae81ff">5</span><span style="color:#f92672"></span>) { <span style="color:#f92672">|</span>index<span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">#{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#34;</span> }
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-0-</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-1-</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-2-</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-3-</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-4-</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>Interesting, maybe if you wanted an array like this</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> b <span style="color:#f92672">=</span> Array<span style="color:#f92672">.</span>new(<span style="color:#ae81ff">5</span><span style="color:#f92672"></span>) { <span style="color:#f92672">|</span>index<span style="color:#f92672">|</span> index<span style="color:#f92672">*</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672"></span>}
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">5</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">10</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">15</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">20</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+
+</code></pre></div><p>Cool!</p>
+<h2 id="try-convertobj---array-or-nil">try_convert(obj) -&gt; array or nil</h2>
+<pre><code>Tries to convert obj into an array, using to_ary method. Returns the converted array or nil if obj cannot be converted for any reason. This method can be used to check if an argument is an array.
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> Array<span style="color:#f92672">.</span>try_convert(<span style="color:#ae81ff">1</span><span style="color:#f92672"></span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">nil</span>
+<span style="color:#f92672">&gt;&gt;</span> Array<span style="color:#f92672">.</span>try_convert(<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span>,<span style="color:#ae81ff">2</span><span style="color:#f92672"></span>,<span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">2</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+</code></pre></div><p>Hmm, so I guess this would be good if you only want to return array if its an array and nil otherwise. Never seen it used myself but it be a way to write confident code if you only want to respond to nil or array and use a bunch of if statements.</p>
+<p>Cool, I had fun poking at ruby array class methods and trying things out.  Be sure and checkout the gotchas in the docs. I hope I was able to shed some light or at least make you think about some of the public methods of arrays. If you have some insight on how some of these work, please leave a note in the comments.</p>
+<p>Thank you to <a href="http://daniellesucher.com">Danielle Sucher</a> <a href="https://twitter.com/@DanielleSucher">@DanielleSucher</a> for helping by proof-reading this post as I am working on improving my writing.</p>
+<p>Next post in this series will be on instance methods!</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+</body>
+</html>

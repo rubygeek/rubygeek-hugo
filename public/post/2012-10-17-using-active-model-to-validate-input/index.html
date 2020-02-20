@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Using ActiveModel to Validate Input - Rubygeek</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Using ActiveModel to Validate Input" />
+<meta property="og:description" content="The other day I was working a project where I had to validate some input before running a query:
+Say I have a database of friends and their address, and I want to find all friends with at least 3 letters of the name and an optional zipcode. The controller looks like this:
+def index @name = clean_name(params[:name]) @zip = params[:zip] if @name.present? &amp;&amp; @name.size &gt; 2 if @zip.present? &amp;&amp; @zip." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rubygeek.com/post/2012-10-17-using-active-model-to-validate-input/" />
+<meta property="article:published_time" content="2012-10-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2012-10-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using ActiveModel to Validate Input"/>
+<meta name="twitter:description" content="The other day I was working a project where I had to validate some input before running a query:
+Say I have a database of friends and their address, and I want to find all friends with at least 3 letters of the name and an optional zipcode. The controller looks like this:
+def index @name = clean_name(params[:name]) @zip = params[:zip] if @name.present? &amp;&amp; @name.size &gt; 2 if @zip.present? &amp;&amp; @zip."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/main.css" />
+
+	
+		<script src="http://rubygeek.comjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="http://rubygeek.com">Rubygeek</a></h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">17</span>
+							<span class="rest">Oct 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Using ActiveModel to Validate Input</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>The other day I was working a project where I had to validate some input before running a query:</p>
+<p>Say I have a database of friends and their address, and I want to find all friends with at least 3 letters of the name and an optional zipcode. The controller looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">index</span>
+  @name <span style="color:#f92672">=</span> clean_name(params<span style="color:#f92672">[</span><span style="color:#e6db74">:name</span><span style="color:#f92672">]</span>)
+  @zip <span style="color:#f92672">=</span> params<span style="color:#f92672">[</span><span style="color:#e6db74">:zip</span><span style="color:#f92672">]</span> 
+  <span style="color:#66d9ef">if</span> @name<span style="color:#f92672">.</span>present? <span style="color:#f92672">&amp;&amp;</span> @name<span style="color:#f92672">.</span>size <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>
+    <span style="color:#f92672"></span><span style="color:#66d9ef">if</span> @zip<span style="color:#f92672">.</span>present? <span style="color:#f92672">&amp;&amp;</span> @zip<span style="color:#f92672">.</span>match(<span style="color:#e6db74">/</span><span style="color:#e6db74">^</span><span style="color:#e6db74">\</span><span style="color:#e6db74">d{5}$</span><span style="color:#e6db74">/</span>)
+      @friends <span style="color:#f92672">=</span> <span style="color:#66d9ef">Property</span><span style="color:#f92672">.</span>where( <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">name like ?</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%</span><span style="color:#e6db74">#{</span>@name<span style="color:#e6db74">}</span><span style="color:#e6db74">%</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>where(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">zip_code = ?</span><span style="color:#e6db74">&#34;</span>, @zip)
+    <span style="color:#66d9ef">else</span>
+      @friends <span style="color:#f92672">=</span> <span style="color:#66d9ef">Property</span><span style="color:#f92672">.</span>where( <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">name like ? </span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%</span><span style="color:#e6db74">#{</span>@name<span style="color:#e6db74">}</span><span style="color:#e6db74">%</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">else</span>
+    @friends <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#f92672">]</span> 
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">private</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">clean_name</span>(str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+  str<span style="color:#f92672">.</span>gsub(<span style="color:#e6db74">/</span><span style="color:#e6db74">mrs?|miss|ms|jr|sr</span><span style="color:#e6db74">/i</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>strip <span style="color:#66d9ef">if</span> str<span style="color:#f92672">.</span>present?
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>Ugly huh? Too many if statement and validation and checking for blanks. I was in a rush, so I was trying to get it out there and move on with life, but when I needed the same validation in another action, I figured it was time to bite the bullet and Do It The Right Way.</p>
+<p>I started off with a plain old ruby object (PORO) in lib directory so I can validate the params for a search query there (in past, I've put objects like this in models since its <em>sort</em> of a model, just not a database model, so .. I am 50/50 on the issue. Meh. I'll figure out the best location later if need be).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SearchParams</span>
+ 
+  <span style="color:#66d9ef">attr_reader</span> <span style="color:#e6db74">:name</span>, <span style="color:#e6db74">:zip_code</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">initialize</span>(args)
+    @name <span style="color:#f92672">=</span> clean_name(args<span style="color:#f92672">[</span><span style="color:#e6db74">:name</span><span style="color:#f92672">]</span>)
+    @zip_code <span style="color:#f92672">=</span> args<span style="color:#f92672">[</span><span style="color:#e6db74">:zip_code</span><span style="color:#f92672">]</span>
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">private</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">clean_name</span>(str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+    str<span style="color:#f92672">.</span>gsub(<span style="color:#e6db74">/</span><span style="color:#e6db74">mrs?|miss|ms|jr|sr</span><span style="color:#e6db74">/i</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>strip <span style="color:#66d9ef">if</span> str<span style="color:#f92672">.</span>present?
+  <span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">end</span>
+
+</code></pre></div><p>Then for the controller:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">index</span>
+  @search_params <span style="color:#f92672">=</span> <span style="color:#66d9ef">SearchParams</span><span style="color:#f92672">.</span>new(params)  
+  <span style="color:#66d9ef">if</span> @name<span style="color:#f92672">.</span>present? <span style="color:#f92672">&amp;&amp;</span> @name<span style="color:#f92672">.</span>size <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>
+    <span style="color:#f92672"></span><span style="color:#66d9ef">if</span> @zip<span style="color:#f92672">.</span>present? <span style="color:#f92672">&amp;&amp;</span> @zip<span style="color:#f92672">.</span>match(<span style="color:#e6db74">/</span><span style="color:#e6db74">^</span><span style="color:#e6db74">\</span><span style="color:#e6db74">d{5}$</span><span style="color:#e6db74">/</span>)
+      @friends <span style="color:#f92672">=</span> <span style="color:#66d9ef">Property</span><span style="color:#f92672">.</span>where( <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">name like ?</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%</span><span style="color:#e6db74">#{</span>@search_params<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">%</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>where(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">zip_code = ?</span><span style="color:#e6db74">&#34;</span>, @search_params<span style="color:#f92672">.</span>zip)
+    <span style="color:#66d9ef">else</span>
+      @friends <span style="color:#f92672">=</span> <span style="color:#66d9ef">Property</span><span style="color:#f92672">.</span>where( <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">name like ? </span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%</span><span style="color:#e6db74">#{</span>@search_params<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">%</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">else</span>
+    @friends <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#f92672">]</span> 
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+
+</code></pre></div><p>And now that it param in its own class, its much easier to test (I personally despise testing controllers)..and that private method is out of the controller, yay!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">describe <span style="color:#66d9ef">SearchParams</span> <span style="color:#66d9ef">do</span>
+  it <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">should initialize the Search object</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">do</span>
+    @search <span style="color:#f92672">=</span> <span style="color:#66d9ef">SearchParams</span><span style="color:#f92672">.</span>new(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blah</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">zip_code</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">12345</span><span style="color:#e6db74">&#34;</span>)
+    @search<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>should <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blah</span><span style="color:#e6db74">&#34;</span>
+    @search<span style="color:#f92672">.</span>zip_code<span style="color:#f92672">.</span>should <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">12345</span><span style="color:#e6db74">&#34;</span> 
+  <span style="color:#66d9ef">end</span>
+
+  context <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">clean name</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">do</span>
+
+    it <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">should clean name modifiers from search query</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">do</span>
+      keywords <span style="color:#f92672">=</span> <span style="color:#e6db74">%w(</span><span style="color:#e6db74">mr mrs miss jr sr</span><span style="color:#e6db74">)</span>
+      keywords<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>keyword<span style="color:#f92672">|</span>
+        @search <span style="color:#f92672">=</span> <span style="color:#66d9ef">SearchParams</span><span style="color:#f92672">.</span>new(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>keyword<span style="color:#e6db74">}</span><span style="color:#e6db74"> Bob</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">zip_code</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">12345</span><span style="color:#e6db74">&#34;</span>)
+        @search<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>should <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Bob</span><span style="color:#e6db74">&#34;</span>
+      <span style="color:#66d9ef">end</span>     
+
+      keywords<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>keyword<span style="color:#f92672">|</span>
+        @search <span style="color:#f92672">=</span> <span style="color:#66d9ef">SearchParams</span><span style="color:#f92672">.</span>new(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blah </span><span style="color:#e6db74">#{</span>keyword<span style="color:#f92672">.</span>upcase!<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">zip_code</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">12345</span><span style="color:#e6db74">&#34;</span>)
+        @search<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>should <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Bob</span><span style="color:#e6db74">&#34;</span>
+      <span style="color:#66d9ef">end</span>     
+    <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>That first test is just sort of a sanity test, to make sure everything is working. I may delete it later. Then I test cleaning the modifiers both lowercase and uppercase to confirm the case insensitivity of the regex (maybe not necessary). The each loop there actually makes several tests in loop.</p>
+<p>Better but not by much. Lets add validations from [http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html](Active Model) and see if we can cut down on those ugly if statements.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SearchParams</span>
+  <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">ActiveModel</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Validations</span>
+  validates <span style="color:#e6db74">:name</span>, <span style="color:#e6db74">presence</span>: <span style="color:#66d9ef">true</span>, <span style="color:#e6db74">length</span>: { <span style="color:#e6db74">minimum</span>: <span style="color:#ae81ff">3</span> <span style="color:#f92672"></span>}
+  validates <span style="color:#e6db74">:zip_code</span>, format: <span style="color:#e6db74">/</span><span style="color:#e6db74">^</span><span style="color:#e6db74">\</span><span style="color:#e6db74">d{5}$</span><span style="color:#e6db74">/</span>, <span style="color:#e6db74">allow_blank</span>: <span style="color:#66d9ef">true</span>
+ 
+  <span style="color:#66d9ef">attr_reader</span> <span style="color:#e6db74">:name</span>, <span style="color:#e6db74">:zip_code</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">initialize</span>(args)
+    @name <span style="color:#f92672">=</span> clean_name(args<span style="color:#f92672">[</span><span style="color:#e6db74">:name</span><span style="color:#f92672">]</span>)
+    @zip_code <span style="color:#f92672">=</span> args<span style="color:#f92672">[</span><span style="color:#e6db74">:zip_code</span><span style="color:#f92672">]</span>
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">private</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">clean_name</span>(str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+    str<span style="color:#f92672">.</span>gsub(<span style="color:#e6db74">/</span><span style="color:#e6db74">mrs?|miss|ms|jr|sr</span><span style="color:#e6db74">/i</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>strip <span style="color:#66d9ef">if</span> str<span style="color:#f92672">.</span>present?
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>Awesome. Now the controller code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">index</span>
+  @search_params <span style="color:#f92672">=</span> <span style="color:#66d9ef">SearchParams</span><span style="color:#f92672">.</span>new(params)
+
+  <span style="color:#66d9ef">if</span> @search_params<span style="color:#f92672">.</span>valid?
+    <span style="color:#66d9ef">if</span> @search_params<span style="color:#f92672">.</span>zip_code<span style="color:#f92672">.</span>present?
+      @friends <span style="color:#f92672">=</span> <span style="color:#66d9ef">Friend</span><span style="color:#f92672">.</span>where( <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">name like ?</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%</span><span style="color:#e6db74">#{</span>@search_params<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">%</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>where(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">zip_code = ?</span><span style="color:#e6db74">&#34;</span>, @search_params<span style="color:#f92672">.</span>zip_code)
+    <span style="color:#66d9ef">else</span>
+      @friends <span style="color:#f92672">=</span> <span style="color:#66d9ef">Friend</span><span style="color:#f92672">.</span>where( <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">name like ? </span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%</span><span style="color:#e6db74">#{</span>@search_params<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">%</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">else</span>
+    @friends <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#f92672">]</span>
+  <span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>Looks better, we can just do a .valid? call to see if the name is of valid length and the zipcode (if its provided) meets the the requirements of 5 digits. Nicely refactored and now its easier to test. Now we can test the validations:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">context <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">validations</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">do</span> 
+  it <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">should not be valid for name length of 1</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">do</span>
+    @search <span style="color:#f92672">=</span> <span style="color:#66d9ef">SearchParams</span><span style="color:#f92672">.</span>new(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span>)
+    @search<span style="color:#f92672">.</span>should_not be_valid
+  <span style="color:#66d9ef">end</span>
+
+  it <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">should be valid for name length of 3</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">do</span>
+    @search <span style="color:#f92672">=</span> <span style="color:#66d9ef">SearchParams</span><span style="color:#f92672">.</span>new(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">bla</span><span style="color:#e6db74">&#34;</span>)
+    @search<span style="color:#f92672">.</span>should be_valid
+  <span style="color:#66d9ef">end</span>
+
+  it <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">should allow blank for zip_code</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">do</span>
+    @search <span style="color:#f92672">=</span> <span style="color:#66d9ef">SearchParams</span><span style="color:#f92672">.</span>new(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blah</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">zip_code</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+    @search<span style="color:#f92672">.</span>should be_valid
+  <span style="color:#66d9ef">end</span>
+
+  it <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">should not allow 1 for zip_code</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">do</span>
+    @search <span style="color:#f92672">=</span> <span style="color:#66d9ef">SearchParams</span><span style="color:#f92672">.</span>new(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blah</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">zip_code</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">1</span><span style="color:#e6db74">&#34;</span>)
+    @search<span style="color:#f92672">.</span>should_not be_valid
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>BTW since there is a method called valid? and it returns a boolean (obviously with the ? at end) in rspec you can just do be_whatever to call that method in your tests.</p>
+<p>Beautiful!! &hellip; I sleep better tonight knowing I've made beautiful code :) :) :) :)</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+</body>
+</html>

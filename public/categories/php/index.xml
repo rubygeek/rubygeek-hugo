@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>php on </title>
+    <link>/categories/php/</link>
+    <description>Recent content in php on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 26 Jan 2006 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Response to Test Freak!</title>
+      <link>/post/2006-01-26-response-to-test-freak/</link>
+      <pubDate>Thu, 26 Jan 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2006-01-26-response-to-test-freak/</guid>
+      <description>Note: this post was originally on my &amp;ldquo;PhpGirl&amp;rdquo; blog
+Update: Chris Shiflett posted an informative responseon Test-More for PHP and testing in general
+I started responding to the comment to my last post, then realized it was going to be long. So I put it in a post.
+Thanks Damien Gilles, I have looked at that. Problem is, I have some resistance at work to using outside code. So I would need to work up a case for it beforehand and analyize it.</description>
+    </item>
+    
+    <item>
+      <title>Test Freak!</title>
+      <link>/post/2006-01-25-test-freak/</link>
+      <pubDate>Wed, 25 Jan 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2006-01-25-test-freak/</guid>
+      <description>Note: this post was originally on my &amp;ldquo;PhpGirl&amp;rdquo; blog
+My two loyal readers know I like testing. Some say I&#39;m sick.
+I&#39;m writing a PHP class for a user, and then think.. oh gee, how do I know if this works?? oh I&#39;ll write a Test::Simple for PHP. Yes, I know there exists one already that uses the power of Perl to test PHP files, but I didn&#39;t have time to figure out how to set that up and probably won&#39;t be able to use perl anyways on the production system.</description>
+    </item>
+    
+  </channel>
+</rss>

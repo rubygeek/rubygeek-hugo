@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>books on </title>
+    <link>/categories/books/</link>
+    <description>Recent content in books on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 30 Aug 2015 21:12:57 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/books/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Book Review - Clojure Applied</title>
+      <link>/post/2015-08-30-book-review-clojure-applied/</link>
+      <pubDate>Sun, 30 Aug 2015 21:12:57 +0000</pubDate>
+      
+      <guid>/post/2015-08-30-book-review-clojure-applied/</guid>
+      <description>Clojure Applied &amp;ndash; Written by Alex Miller and Ben Vangrift.
+I am a junkie for books and Clojure books are no exception. I have been doing Clojure since Jan 2014 and feel like I kinda got the hang of it but now what? When I saw Clojure Applied &amp;ldquo;From Practice to Practitioner&amp;rdquo; was being written I kept a close eye on Pragmatic Programmer&#39;s coming soon list and an eye on twitter.</description>
+    </item>
+    
+    <item>
+      <title>Book Review:  Application Testing with Capybara</title>
+      <link>/post/2014-03-09-book-review-application-testing-with-capybara/</link>
+      <pubDate>Sun, 09 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2014-03-09-book-review-application-testing-with-capybara/</guid>
+      <description>If you know me, you know I love testing. Model tests, library tests (typically when poro objects) are the most awesome to test and I love it. Controller tests, well, are less fun and testing routes is not bad either. But my least favorite are integration tests.
+Cucumber tests seemed awesome in theory and I remember early days in Chicago ruby group there was development on rspec story runner which I believed was written by Dan North, later rewritten as Cucumber.</description>
+    </item>
+    
+    <item>
+      <title>Reading Books Cover-to-Cover</title>
+      <link>/post/2013-01-13-reading-books-cover-to-cover/</link>
+      <pubDate>Sun, 13 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2013-01-13-reading-books-cover-to-cover/</guid>
+      <description>I wanted to buy &amp;ldquo;Practical Object-Orientated Design in Ruby&amp;rdquo; by Sandi Metz when it first came out, and I had a hard time justifying it because there are many books I have bought and have not read all the way through. So I thought I&#39;d do an experiment in reading a tech book cover-to-cover and then I&#39;ll buy &amp;ldquo;poodr&amp;rdquo;. So my first cover-to-cover read was Eloquent Ruby by Russ Olsen. Not all books should be read cover-to-cover but when you read a book cover-to-cover you&#39;ll discover a few things:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ruby on </title>
+    <link>/categories/ruby/</link>
+    <description>Recent content in ruby on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 03 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>One-Liners in Clojure and Ruby</title>
+      <link>/post/2018-01-03-one-liners-clojure-ruby/</link>
+      <pubDate>Wed, 03 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-01-03-one-liners-clojure-ruby/</guid>
+      <description>A quick post to start off the new year.
+You and your co-workers can&#39;t decide where to go for lunch?
+▶ ruby -e &amp;#34;puts [:tacos, :chicken, :bbq].sample&amp;#34; chicken ▶ clj -e &amp;#34;(rand-nth [:tacos :chicken :bbq])&amp;#34; :tacos Observations:
+Ruby I had to tell it what to do with the output, to puts it. It didn&#39;t automatically display like if I had done that line in the irb repl. Oh and don&#39;t do what I did at first and forget the , (comma) :)</description>
+    </item>
+    
+    <item>
+      <title>Ruby like Python</title>
+      <link>/post/2017-03-10-ruby-like-python/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-03-10-ruby-like-python/</guid>
+      <description>I did python.. awhile back, it was like ruby in some ways and in some ways not. So I picked one, I went full blown into Ruby. Recently I&#39;ve seen lots of job postings for Python so I figured I&#39;d give it another go :)
+Slicing In Python:
+&amp;gt;&amp;gt;&amp;gt; message = &amp;#34;hello world&amp;#34; &amp;gt;&amp;gt;&amp;gt; message[0:5] &amp;#39;hello&amp;#39; &amp;gt;&amp;gt;&amp;gt; message[6:] &amp;#39;world&amp;#39; Then in ruby
+2.4.0 :001 &amp;gt; message = &amp;#34;hello world&amp;#34; =&amp;gt; &amp;#34;hello world&amp;#34; 2.</description>
+    </item>
+    
+    <item>
+      <title>Enumerable: any?</title>
+      <link>/post/2015-08-02-enumerable-got-any/</link>
+      <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-08-02-enumerable-got-any/</guid>
+      <description>This is about the handy any? method in Enumerable
+The documentation says
+class Taco attr_accessor :meat def initialize(meat) @meat = meat end def beef? @meat == :beef end def chicken? @meat == :chicken end end Lets test it out
+irb(main):018:0&amp;gt; taco = Taco.new(:beef) =&amp;gt; #&amp;lt;Taco:0x007fa374070278 @meat=:beef&amp;gt; irb(main)&amp;gt; taco.beef? =&amp;gt; true irb(main)&amp;gt; taco.chicken? =&amp;gt; false Lets create two instances
+tacos = [] tacos.push(Taco.new(:beef)) tacos.push(Taco.new(:chicken)) Now since the array has enumerable and we made some handy methods to test the meat of our tacos we can easily check our array to see if we have any chicken tacos:</description>
+    </item>
+    
+    <item>
+      <title>Exploring Arrays Part 5</title>
+      <link>/post/2014-08-28-exploring-arrays-part-5/</link>
+      <pubDate>Thu, 28 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2014-08-28-exploring-arrays-part-5/</guid>
+      <description>BTW Going to use Ruby 2.1.2 from here on out
+Yes, it has been awhile but (who has time to dwell on the past?) I haven&#39;t forgotten I was going through each array class! My last post said next was delete, so let&#39;s get to it!
+delete delete(obj) → item or nil delete(obj) { block } → item or result of block  Ok first one looks pretty straight forward, it returns item if it found it and nil if it doesn&#39;t.</description>
+    </item>
+    
+    <item>
+      <title>Getting Better at Practice</title>
+      <link>/post/2013-10-13-getting-better-at-practice/</link>
+      <pubDate>Sun, 13 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2013-10-13-getting-better-at-practice/</guid>
+      <description>It often surprising to me to find developers who don&#39;t spend time improving their craft. In reading the book The Clean Coder: A Code of Conduct for Professional Programmers by Uncle Bob It states:
+ Practicing is what you do when you aren&#39;t getting paid. You do it so you will be paid, and paid well.
+ To put it another way, do you really want a doctor who only uses what he knows from 2005 when he graduated from medical school?</description>
+    </item>
+    
+    <item>
+      <title>Exploring Arrays - Part 4</title>
+      <link>/post/2013-09-02-exploring-arrays-part-4/</link>
+      <pubDate>Mon, 02 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2013-09-02-exploring-arrays-part-4/</guid>
+      <description>combination combination(n) { |c| block } → ary combination(n) → an_enumerator  Next method up for discussion is combination, when I saw this my first thought was &amp;ldquo;OH wow!! I can make games!!&amp;quot;. Being able to generate datasets I think is key to making a game. Being able to make a list of combinations, then pick on at random I think is cool. Lets try it
+&amp;gt;&amp;gt; bad_guys = [:ogre, :giant, :zombie] =&amp;gt; [:ogre, :giant, :zombie] &amp;gt;&amp;gt; bad_guys.</description>
+    </item>
+    
+    <item>
+      <title>Exploring Arrays - Part 3</title>
+      <link>/post/2013-04-27-exploring-arrays-part-3/</link>
+      <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2013-04-27-exploring-arrays-part-3/</guid>
+      <description>Continuing going through the array methods, using Ruby 1.9.3
+Element Reference ary[index] → obj or nil ary[start, length] → new_ary or nil ary[range] → new_ary or nil slice(index) → obj or nil slice(start, length) → new_ary or nil slice(range) → new_ary or nil Ok, so we&#39;ve got the &amp;ldquo;normal&amp;rdquo; way to access an array element, simply using the name of the array, [ index ]. If item is not found at index it returns nil.</description>
+    </item>
+    
+    <item>
+      <title>Exploring Arrays - Part 2</title>
+      <link>/post/2013-03-11-exploring-arrays-part-2/</link>
+      <pubDate>Mon, 11 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2013-03-11-exploring-arrays-part-2/</guid>
+      <description>My second blog post on the topic. Between the writings of this post and part 1 Ruby 2.0 was released on its 20th birthday! But I am going to stick with Ruby 1.9.3 for this series, maybe after I am done I&#39;ll see what changed for 2.0
+Array Documentation http://ruby-doc.org/core-1.9.3/Array.html
+BTW, to make an array you can use the %w and space separated list of values, I will use that here to save on typing.</description>
+    </item>
+    
+    <item>
+      <title>Exploring Arrays - Part 1</title>
+      <link>/post/2013-02-23-exploring-arrays-part-1/</link>
+      <pubDate>Sat, 23 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2013-02-23-exploring-arrays-part-1/</guid>
+      <description>Everytime that I have to lookup something with hashes or arrays, I find lots of methods that I didn&#39;t know about, so I thought I&#39;d do an experiment where I will learn about each one and write some examples and try to understand how to use it. I kind of picture someone sitting next to me as I do this, reading the docs and trying them out with me.
+Ruby 1.</description>
+    </item>
+    
+    <item>
+      <title>Reading Books Cover-to-Cover</title>
+      <link>/post/2013-01-13-reading-books-cover-to-cover/</link>
+      <pubDate>Sun, 13 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2013-01-13-reading-books-cover-to-cover/</guid>
+      <description>I wanted to buy &amp;ldquo;Practical Object-Orientated Design in Ruby&amp;rdquo; by Sandi Metz when it first came out, and I had a hard time justifying it because there are many books I have bought and have not read all the way through. So I thought I&#39;d do an experiment in reading a tech book cover-to-cover and then I&#39;ll buy &amp;ldquo;poodr&amp;rdquo;. So my first cover-to-cover read was Eloquent Ruby by Russ Olsen. Not all books should be read cover-to-cover but when you read a book cover-to-cover you&#39;ll discover a few things:</description>
+    </item>
+    
+    <item>
+      <title>Using ActiveModel to Validate Input</title>
+      <link>/post/2012-10-17-using-active-model-to-validate-input/</link>
+      <pubDate>Wed, 17 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2012-10-17-using-active-model-to-validate-input/</guid>
+      <description>The other day I was working a project where I had to validate some input before running a query:
+Say I have a database of friends and their address, and I want to find all friends with at least 3 letters of the name and an optional zipcode. The controller looks like this:
+def index @name = clean_name(params[:name]) @zip = params[:zip] if @name.present? &amp;amp;&amp;amp; @name.size &amp;gt; 2 if @zip.present? &amp;amp;&amp;amp; @zip.</description>
+    </item>
+    
+    <item>
+      <title>Caps in Ruby are Constants</title>
+      <link>/post/2012-09-13-caps-in-ruby-are-constants/</link>
+      <pubDate>Thu, 13 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2012-09-13-caps-in-ruby-are-constants/</guid>
+      <description>&lt;p&gt;Everything in Ruby that starts with a capital letter is a constant, meaning you can&#39;t change its value. That means:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;API_USER&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;API_PASSWORD&lt;/span&gt; 
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;Talk&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Are constants, here they are as you normally might see them:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;API_USER&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;devuser&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;API_PASSWORD&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;h1%3am1&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;Class&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Talk&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ActiveRecord&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Base&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I&#39;ve seen people use  const_get(&amp;ldquo;string&amp;rdquo;) to get the objectived (yes I make up my own words, I don&#39;t know what you would call this? perhaps constantized? keep reading) of a string like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Object&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;const_get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Talk&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Talk&lt;/span&gt;(id: integer, &lt;span style=&#34;color:#e6db74&#34;&gt;conference_id&lt;/span&gt;: integer, &lt;span style=&#34;color:#e6db74&#34;&gt;person_id&lt;/span&gt;: integer, &lt;span style=&#34;color:#e6db74&#34;&gt;title&lt;/span&gt;: string, &lt;span style=&#34;color:#e6db74&#34;&gt;description&lt;/span&gt;: text, &lt;span style=&#34;color:#e6db74&#34;&gt;slides_url&lt;/span&gt;: string, &lt;span style=&#34;color:#e6db74&#34;&gt;video_url&lt;/span&gt;: string, &lt;span style=&#34;color:#e6db74&#34;&gt;start_time&lt;/span&gt;: datetime, &lt;span style=&#34;color:#e6db74&#34;&gt;end_time&lt;/span&gt;: datetime, &lt;span style=&#34;color:#e6db74&#34;&gt;created_at&lt;/span&gt;: datetime, &lt;span style=&#34;color:#e6db74&#34;&gt;updated_at&lt;/span&gt;: datetime)
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; intro_talk &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; t&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;color:#e6db74&#34;&gt;title&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Intro to Rails&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+
+t&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ancestors&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Talk&lt;/span&gt;(id: integer, &lt;span style=&#34;color:#e6db74&#34;&gt;conference_id&lt;/span&gt;: integer, &lt;span style=&#34;color:#e6db74&#34;&gt;person_id&lt;/span&gt;: integer, &lt;span style=&#34;color:#e6db74&#34;&gt;title&lt;/span&gt;: string, &lt;span style=&#34;color:#e6db74&#34;&gt;description&lt;/span&gt;: text, &lt;span style=&#34;color:#e6db74&#34;&gt;slides_url&lt;/span&gt;: string, &lt;span style=&#34;color:#e6db74&#34;&gt;video_url&lt;/span&gt;: string, &lt;span style=&#34;color:#e6db74&#34;&gt;start_time&lt;/span&gt;: datetime, &lt;span style=&#34;color:#e6db74&#34;&gt;end_time&lt;/span&gt;: datetime, &lt;span style=&#34;color:#e6db74&#34;&gt;created_at&lt;/span&gt;: datetime, &lt;span style=&#34;color:#e6db74&#34;&gt;updated_at&lt;/span&gt;: datetime)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Crazy, huh? We look up the constant &amp;ldquo;Talk&amp;rdquo; (a subclass of ActiveRecord) and assign it to &amp;lsquo;t&amp;rsquo; and use that to instantiate a new record. I don&#39;t know why you&#39;d do this, but this is what it&#39;s doing and since today I learned that any uppercased ruby identifier is an constant that all makes perfect sense. We can look at the first ancestors and see its ancestor is Talk.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Playing with RubyKoans</title>
+      <link>/post/2012-09-06-playing-with-rubykoans/</link>
+      <pubDate>Thu, 06 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2012-09-06-playing-with-rubykoans/</guid>
+      <description>&lt;p&gt;From time to time I run through the rubykoans&amp;hellip;each time remembering or picking up something new. I&#39;m such a dork, I keep a log of the dates in a spreadsheet. I first did these in Dec 2009, then again in July 2010, May 2011 and now I am going through them again. I remember the first time I did a few, I was amazed &amp;ldquo;how did they do that!?!?!&amp;rdquo; and dug through the source to see how it works. I immediately emailed Joe O&#39;Brien and Jim Weirich at &lt;a href=&#34;http://www.edgecase.com&#34;&gt;edgecase.com&lt;/a&gt; and thanked them! Joe thanked me for my kind words and Jim said they were inspired by the book Little Lisper.&lt;/p&gt;
+&lt;p&gt;When I first did these in 2009, it was a github repo that you cloned. Now you can go to &lt;a href=&#34;http://www.rubykoans.com&#34;&gt;www.rubykoans.com&lt;/a&gt; and download a zipfile or work on them through the browser! Few months ago I was bored with no real computer, so I attempted the browser based koans on my Samsung Tablet. It was kinda hard to do the special symbols so I don&#39;t really recommend doing it on a tablet unless you merely wanted to kill time like I did. :)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Adding an application config file to a rails project</title>
+      <link>/post/2011-07-16-adding-an-application-config-file-to-a-rails-project/</link>
+      <pubDate>Sat, 16 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2011-07-16-adding-an-application-config-file-to-a-rails-project/</guid>
+      <description>&lt;p&gt;Recently I worked on a project where I needed certain config variables for staging, production, test etc and I wanted to store all these in a yaml file. I could set them in the different environments files but I prefer them all in one file.&lt;/p&gt;
+&lt;p&gt;Create a file in the config/initializers .. I called it 00_load_app_config.rb so I can be sure it gets loaded first. In it I have only a single line&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Practicing Ruby with RailsCasts</title>
+      <link>/post/2011-07-10-practicing-ruby-with-railscasts/</link>
+      <pubDate>Sun, 10 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2011-07-10-practicing-ruby-with-railscasts/</guid>
+      <description>&lt;p&gt;I recently went on a small vacation and finally had some time to catch up on some &lt;a href=&#34;http://www.railscasts.com&#34;&gt;RailsCasts&lt;/a&gt;! I like to setup a project and &amp;ldquo;play along&amp;rdquo; with Ryan Bates and pause/play and work through the examples. With all my experimentation/playing I keep a git repo at &lt;a href=&#34;http://github.com/rubygeek/rubygeek&#34;&gt;http://github.com/rubygeek/rubygeek&lt;/a&gt; where I keep code for reference later. Sometimes when trying to remember if i did something, I grep a keyword or two on the root directory and see if I have done something with it before. I can put notes in the readme file for each project, so I can remember what resources I used.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.railscasts.com/episodes/264-guard&#34;&gt;Guard&lt;/a&gt;
+Setups up monitoring for files to run something like tests, compile coffee script or sass. The cast shows how to use it to run your rspec tests. It shows liverefresh, with that and a plugin it will automatically refresh your browser!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.railscasts.com/episodes/262-trees-with-ancestry&#34;&gt;Ancestory&lt;/a&gt;
+I spent a good deal of time using acts_as_commentable_with_threading and although its pretty good, I think now I will change to using this, it seems like it will be more efficent on queries and has more scopes defined.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Koan-A-Copia!</title>
+      <link>/post/2011-01-22-koan-a-copia/</link>
+      <pubDate>Sat, 22 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2011-01-22-koan-a-copia/</guid>
+      <description>&lt;p&gt;I first learned about Koans from EdgeCase Ruby Koans project, it was great fun and great practice. Since then, whenever I mentored a DevChix or RailsMentors member I suggest to start doing Koans&amp;hellip; even on a regular basis, once you finish them all &amp;hellip; then start over! I always have a ruby koan mid-way and work on it when I want to practice ruby. Sometimes I try to complete the whole file then run it. Since I’ve been learning Groovy this week, I looked to see if there was Groovy Koans, found those.. then I just started compiling all the languages I know of..&lt;/p&gt;
+&lt;h3 id=&#34;ruby&#34;&gt;Ruby&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.rubykoans.com&#34;&gt;http://www.rubykoans.com&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;python&#34;&gt;Python&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/gregmalcolm/python_koans&#34;&gt;https://github.com/gregmalcolm/python_koans&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ruby-Debug</title>
+      <link>/post/2010-06-22-ruby-debug/</link>
+      <pubDate>Tue, 22 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2010-06-22-ruby-debug/</guid>
+      <description>I never really used a debugger until I did Java. Before that I did what was called &amp;ldquo;PHP Debugging&amp;rdquo; which is littering your code with print statements until you figure out what you need to know, then going back and making sure you deleted them! In php I sometimes would put a unique string like
+print &amp;ldquo;QWE&amp;rdquo; . $myawesomevar
+Or something like that, then going back and searching your code for QWE (just picked something that was easy to type!</description>
+    </item>
+    
+    <item>
+      <title>Haml in my Camel</title>
+      <link>/post/2009-11-29-haml-in-my-camel/</link>
+      <pubDate>Sun, 29 Nov 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2009-11-29-haml-in-my-camel/</guid>
+      <description>Trying something new .. HAML&amp;hellip; I saw it a couple years ago, I was like &amp;ldquo;ehh.. umm.. nah&amp;rdquo; &amp;hellip; But working on the DevChix site, it seems like it will be our choice instead of erb for templates so I thought I&#39;d give it a try.
+So here&#39;s some straight up html + erb
+&amp;lt;h1&amp;gt;Listing users&amp;lt;/h1&amp;gt; &amp;lt;table&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;th&amp;gt;Username&amp;lt;/th&amp;gt; &amp;lt;th&amp;gt;Email&amp;lt;/th&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;% @users.each do |user| %&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;&amp;lt;%=h user.username %&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;%=h user.</description>
+    </item>
+    
+    <item>
+      <title>Builder Pattern in Ruby</title>
+      <link>/post/2009-11-24-builder-pattern-in-ruby/</link>
+      <pubDate>Tue, 24 Nov 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2009-11-24-builder-pattern-in-ruby/</guid>
+      <description>Call me crazy, but this is why I classify myself as a language geek. When I learn something fascinating, i wonder hmm how can I do that with X language? My last postI did an example of the Builder pattern as described in Effective Java by Joshua Bloch. The main motivation for me to use Builder is to have flexible parameter lists, without worrying about order of parameters (there are a few other reasons outlined in the book, but this is what I find cool).</description>
+    </item>
+    
+    <item>
+      <title>Weirdness and Coolness in Rails</title>
+      <link>/post/2007-07-27-weirdness-and-coolness-in-rails/</link>
+      <pubDate>Fri, 27 Jul 2007 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2007-07-27-weirdness-and-coolness-in-rails/</guid>
+      <description>Coolness First the cool thing&amp;hellip; and I think I have a good reason for this&amp;hellip; I have a model that is not tied to any particular table, but is a summary table for about 8 tables. Rather than cluttering up my controller with a bunch of stuff, I am putting into a model (keeping REST in mind). I could have put it in the lib dir as a module.. but.. I thought i&#39;d try it in the models dir, so i don&#39;t have to require it etc.</description>
+    </item>
+    
+    <item>
+      <title>Compiling Ruby 1.8.5 on Ubuntu or I&#39;m not afraid of make</title>
+      <link>/post/2007-02-09-compiling-ruby-1-dot-8-5-on-ubuntu-or-im-not-afraid-of-make/</link>
+      <pubDate>Fri, 09 Feb 2007 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2007-02-09-compiling-ruby-1-dot-8-5-on-ubuntu-or-im-not-afraid-of-make/</guid>
+      <description>If there is one thing I learned from perl &amp;ndash; is not to be afraid of make! I installed countless perl modules&amp;hellip; and when I first started using Linux heavily, I had to compile some apps! Yikes. But not afraid no more&amp;hellip;
+I go to the RubyOnRails.com download page to see what the latest version of Ruby is, so I can install it on my Ubuntu VM (downloaded from vmware list of virtual appliances, and running with VMWare player).</description>
+    </item>
+    
+  </channel>
+</rss>

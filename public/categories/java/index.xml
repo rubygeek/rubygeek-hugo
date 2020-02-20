@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on </title>
+    <link>/categories/java/</link>
+    <description>Recent content in java on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 22 Jan 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Koan-A-Copia!</title>
+      <link>/post/2011-01-22-koan-a-copia/</link>
+      <pubDate>Sat, 22 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2011-01-22-koan-a-copia/</guid>
+      <description>&lt;p&gt;I first learned about Koans from EdgeCase Ruby Koans project, it was great fun and great practice. Since then, whenever I mentored a DevChix or RailsMentors member I suggest to start doing Koans&amp;hellip; even on a regular basis, once you finish them all &amp;hellip; then start over! I always have a ruby koan mid-way and work on it when I want to practice ruby. Sometimes I try to complete the whole file then run it. Since I’ve been learning Groovy this week, I looked to see if there was Groovy Koans, found those.. then I just started compiling all the languages I know of..&lt;/p&gt;
+&lt;h3 id=&#34;ruby&#34;&gt;Ruby&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.rubykoans.com&#34;&gt;http://www.rubykoans.com&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;python&#34;&gt;Python&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/gregmalcolm/python_koans&#34;&gt;https://github.com/gregmalcolm/python_koans&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Builder Pattern in Java</title>
+      <link>/post/2009-11-22-builder-pattern-in-java/</link>
+      <pubDate>Sun, 22 Nov 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2009-11-22-builder-pattern-in-java/</guid>
+      <description>I have been reading Effective Java by Joshua Blochand learned something new so I wanted to try it out.
+Making long parameter lists in your constructor is not fun and prone to errors. Previously I thought that best way to handle this situation was to make a bunch of setter methods. This can get kind of tedious and hard to follow when there are alot of parameters:
+Address myaddress = new Address(&amp;#34;Chicago&amp;#34;, &amp;#34;IL&amp;#34;); myaddress.</description>
+    </item>
+    
+  </channel>
+</rss>

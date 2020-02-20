@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Caps in Ruby are Constants - Rubygeek</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Caps in Ruby are Constants" />
+<meta property="og:description" content="Everything in Ruby that starts with a capital letter is a constant, meaning you can&#39;t change its value. That means:
+API_USER
+API_PASSWORD 
+
+Talk
+Are constants, here they are as you normally might see them:
+API_USER = &#39;devuser&#39;
+API_PASSWORD = &#34;h1%3am1&#34;
+
+Class Talk &lt; ActiveRecord::Base
+end
+I&#39;ve seen people use  const_get(&ldquo;string&rdquo;) to get the objectived (yes I make up my own words, I don&#39;t know what you would call this? perhaps constantized? keep reading) of a string like:
+&gt;&gt; t = Object.const_get(&#34;Talk&#34;)
+=&gt; Talk(id: integer, conference_id: integer, person_id: integer, title: string, description: text, slides_url: string, video_url: string, start_time: datetime, end_time: datetime, created_at: datetime, updated_at: datetime)
+&gt;&gt; intro_talk = t.new(title: &#34;Intro to Rails&#34;)
+
+t.ancestors[0]
+=&gt; Talk(id: integer, conference_id: integer, person_id: integer, title: string, description: text, slides_url: string, video_url: string, start_time: datetime, end_time: datetime, created_at: datetime, updated_at: datetime)
+Crazy, huh? We look up the constant &ldquo;Talk&rdquo; (a subclass of ActiveRecord) and assign it to &lsquo;t&rsquo; and use that to instantiate a new record. I don&#39;t know why you&#39;d do this, but this is what it&#39;s doing and since today I learned that any uppercased ruby identifier is an constant that all makes perfect sense. We can look at the first ancestors and see its ancestor is Talk." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rubygeek.com/post/2012-09-13-caps-in-ruby-are-constants/" />
+<meta property="article:published_time" content="2012-09-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2012-09-13T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Caps in Ruby are Constants"/>
+<meta name="twitter:description" content="Everything in Ruby that starts with a capital letter is a constant, meaning you can&#39;t change its value. That means:
+API_USER
+API_PASSWORD 
+
+Talk
+Are constants, here they are as you normally might see them:
+API_USER = &#39;devuser&#39;
+API_PASSWORD = &#34;h1%3am1&#34;
+
+Class Talk &lt; ActiveRecord::Base
+end
+I&#39;ve seen people use  const_get(&ldquo;string&rdquo;) to get the objectived (yes I make up my own words, I don&#39;t know what you would call this? perhaps constantized? keep reading) of a string like:
+&gt;&gt; t = Object.const_get(&#34;Talk&#34;)
+=&gt; Talk(id: integer, conference_id: integer, person_id: integer, title: string, description: text, slides_url: string, video_url: string, start_time: datetime, end_time: datetime, created_at: datetime, updated_at: datetime)
+&gt;&gt; intro_talk = t.new(title: &#34;Intro to Rails&#34;)
+
+t.ancestors[0]
+=&gt; Talk(id: integer, conference_id: integer, person_id: integer, title: string, description: text, slides_url: string, video_url: string, start_time: datetime, end_time: datetime, created_at: datetime, updated_at: datetime)
+Crazy, huh? We look up the constant &ldquo;Talk&rdquo; (a subclass of ActiveRecord) and assign it to &lsquo;t&rsquo; and use that to instantiate a new record. I don&#39;t know why you&#39;d do this, but this is what it&#39;s doing and since today I learned that any uppercased ruby identifier is an constant that all makes perfect sense. We can look at the first ancestors and see its ancestor is Talk."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/main.css" />
+
+	
+		<script src="http://rubygeek.comjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="http://rubygeek.com">Rubygeek</a></h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">13</span>
+							<span class="rest">Sep 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Caps in Ruby are Constants</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Everything in Ruby that starts with a capital letter is a constant, meaning you can't change its value. That means:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">API_USER</span>
+<span style="color:#66d9ef">API_PASSWORD</span> 
+
+<span style="color:#66d9ef">Talk</span>
+</code></pre></div><p>Are constants, here they are as you normally might see them:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">API_USER</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;devuser&#39;</span>
+<span style="color:#66d9ef">API_PASSWORD</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">h1%3am1</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#66d9ef">Class</span> <span style="color:#66d9ef">Talk</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>I've seen people use  const_get(&ldquo;string&rdquo;) to get the objectived (yes I make up my own words, I don't know what you would call this? perhaps constantized? keep reading) of a string like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> t <span style="color:#f92672">=</span> <span style="color:#66d9ef">Object</span><span style="color:#f92672">.</span>const_get(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Talk</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">Talk</span>(id: integer, <span style="color:#e6db74">conference_id</span>: integer, <span style="color:#e6db74">person_id</span>: integer, <span style="color:#e6db74">title</span>: string, <span style="color:#e6db74">description</span>: text, <span style="color:#e6db74">slides_url</span>: string, <span style="color:#e6db74">video_url</span>: string, <span style="color:#e6db74">start_time</span>: datetime, <span style="color:#e6db74">end_time</span>: datetime, <span style="color:#e6db74">created_at</span>: datetime, <span style="color:#e6db74">updated_at</span>: datetime)
+<span style="color:#f92672">&gt;&gt;</span> intro_talk <span style="color:#f92672">=</span> t<span style="color:#f92672">.</span>new(<span style="color:#e6db74">title</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Intro to Rails</span><span style="color:#e6db74">&#34;</span>)
+
+t<span style="color:#f92672">.</span>ancestors<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">Talk</span>(id: integer, <span style="color:#e6db74">conference_id</span>: integer, <span style="color:#e6db74">person_id</span>: integer, <span style="color:#e6db74">title</span>: string, <span style="color:#e6db74">description</span>: text, <span style="color:#e6db74">slides_url</span>: string, <span style="color:#e6db74">video_url</span>: string, <span style="color:#e6db74">start_time</span>: datetime, <span style="color:#e6db74">end_time</span>: datetime, <span style="color:#e6db74">created_at</span>: datetime, <span style="color:#e6db74">updated_at</span>: datetime)
+</code></pre></div><p>Crazy, huh? We look up the constant &ldquo;Talk&rdquo; (a subclass of ActiveRecord) and assign it to &lsquo;t&rsquo; and use that to instantiate a new record. I don't know why you'd do this, but this is what it's doing and since today I learned that any uppercased ruby identifier is an constant that all makes perfect sense. We can look at the first ancestors and see its ancestor is Talk.</p>
+<p>I learned doing the <a href="http://www.rubykoans.com">RubyKoans</a> that constants of the same name have the same object_id and here it looks like it does</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> t<span style="color:#f92672">.</span>object_id
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">70166169198120</span>
+<span style="color:#f92672"></span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#66d9ef">Talk</span><span style="color:#f92672">.</span>object_id
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">70166169198120</span>
+<span style="color:#f92672"></span></code></pre></div><p>If you are in rails, you can do &ldquo;string&rdquo;.constantize</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Talk</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>constantize<span style="color:#f92672">.</span>object_id
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">70247114179900</span>
+<span style="color:#f92672"></span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#66d9ef">Object</span><span style="color:#f92672">.</span>const_get(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Talk</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>object_id
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">70247114179900</span>
+<span style="color:#f92672"></span></code></pre></div><p>Hrm. Lets look at the source of constantize <a href="http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html">docs</a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># File activesupport/lib/active_support/inflector/methods.rb, line 213</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">constantize</span>(camel_cased_word)
+  names <span style="color:#f92672">=</span> camel_cased_word<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;::&#39;</span>)
+  names<span style="color:#f92672">.</span>shift <span style="color:#66d9ef">if</span> names<span style="color:#f92672">.</span>empty? <span style="color:#f92672">||</span> names<span style="color:#f92672">.</span>first<span style="color:#f92672">.</span>empty?
+
+  constant <span style="color:#f92672">=</span> <span style="color:#66d9ef">Object</span>
+  names<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>name<span style="color:#f92672">|</span>
+    constant <span style="color:#f92672">=</span> constant<span style="color:#f92672">.</span>const_defined?(name) ? constant<span style="color:#f92672">.</span>const_get(name) : constant<span style="color:#f92672">.</span>const_missing(name)
+  <span style="color:#66d9ef">end</span>
+  constant
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>Right there at the heart of the method, sure enough, is const_get and it returns that value unless its not defined. I do not however understand they first do   constant = Object ? But maybe a reader does..</p>
+<p>Short post, but its what I was pondering today when I heard all Uppercased identifiers are constants in ruby&hellip; and now I understand how and why const_get works.</p>
+			</div>
+
+			<div class="tags">
+				
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+</body>
+</html>

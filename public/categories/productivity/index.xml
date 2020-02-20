@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>productivity on </title>
+    <link>/categories/productivity/</link>
+    <description>Recent content in productivity on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 10 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/productivity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Managing My Tasks</title>
+      <link>/post/2017-12-10-managing-my-tasks/</link>
+      <pubDate>Sun, 10 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-12-10-managing-my-tasks/</guid>
+      <description>Some one asked me how I manage my tasks and I showed him but I thought it would make for a good blog post. I&#39;m not saying I am the perfect solution but this is what works for me.
+For long term storage of projects, tasks and ideas I use Omnifocus. I have used it for 7 years. I initially got a free copy of the Mac app because I know someone who works there but since then I&#39;ve paid for updates and bought it for iPhone and iPad.</description>
+    </item>
+    
+    <item>
+      <title>Reading Books Cover-to-Cover</title>
+      <link>/post/2013-01-13-reading-books-cover-to-cover/</link>
+      <pubDate>Sun, 13 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2013-01-13-reading-books-cover-to-cover/</guid>
+      <description>I wanted to buy &amp;ldquo;Practical Object-Orientated Design in Ruby&amp;rdquo; by Sandi Metz when it first came out, and I had a hard time justifying it because there are many books I have bought and have not read all the way through. So I thought I&#39;d do an experiment in reading a tech book cover-to-cover and then I&#39;ll buy &amp;ldquo;poodr&amp;rdquo;. So my first cover-to-cover read was Eloquent Ruby by Russ Olsen. Not all books should be read cover-to-cover but when you read a book cover-to-cover you&#39;ll discover a few things:</description>
+    </item>
+    
+    <item>
+      <title>Screen Multiplexing == Productivity</title>
+      <link>/post/2012-02-26-screen-multiplexing-productivity/</link>
+      <pubDate>Sun, 26 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2012-02-26-screen-multiplexing-productivity/</guid>
+      <description>&lt;p&gt;A few friends have been telling me about tmux and since I&#39;ve been using a mac full time again (rather than ssh into linux) I haven&#39;t used a screen multiplexer. I wrote awhile back about &lt;!-- raw HTML omitted --&gt;Getting around with GNU Screen&lt;!-- raw HTML omitted --&gt; and I really liked screen. I was listening to Changelog&#39;s podcast &lt;!-- raw HTML omitted --&gt;Episode 0.7.3 - Tmux with Brian Hogan and Josh Clayton&lt;!-- raw HTML omitted --&gt; on one of my walks, it seemed useful and better than screen. Then I remembered hey it was kind of useful to use a screen multiplexer (BTW, I love saying multiplexer. I feel smart, like I know what I am talking about, hehe). I got home from my walk and installed it and started with the links on the changelog show notes and not wanting to get overwhemed by just copying someone conf file, I started simple and added a few things:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Getting around with GNU Screen</title>
+      <link>/post/2010-07-16-getting-around-with-gnu-screen/</link>
+      <pubDate>Fri, 16 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2010-07-16-getting-around-with-gnu-screen/</guid>
+      <description>In past few months, I worked on a project developed entirely on linux. Previously, I mostly did rails development on mac with textmate. I had a brief period of rails and perl where I did vim and screen&amp;hellip;oh maybe 4 years ago. Anyways, so I didn&#39;t forget much vim over the years, but I had forgotten how to use screen. I looked some documentation to refresh my memory and this post is mainly notes for me :)</description>
+    </item>
+    
+    <item>
+      <title>Remote Pair Programming</title>
+      <link>/post/2010-02-11-remote-pair-programming/</link>
+      <pubDate>Thu, 11 Feb 2010 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2010-02-11-remote-pair-programming/</guid>
+      <description>Seems like Pair Programming is &amp;ldquo;all the rage&amp;rdquo; lately in my circles. I haven&#39;t exactly done it before but after hearing about the success and rapid knowledge growth amongst those that pair program&amp;hellip;I was almost dying to try it! Especially after i saw David Chelimskyand Corey Hainesat WindyCityRailsin Sept 2009. I saw them pair and do BDD with Rspec/Cucumber and it was so fascinating, It was like I was watching a ballet as they hopped from RSpec to Cucumber and back and forth.</description>
+    </item>
+    
+    <item>
+      <title>I like Tomatos. I like time.</title>
+      <link>/post/2009-09-20-i-like-tomatos-i-like-time/</link>
+      <pubDate>Sun, 20 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2009-09-20-i-like-tomatos-i-like-time/</guid>
+      <description>In my constant battle to get stuff done and feel good about what I did, I am finding the Pomodoro Methodvery handy.
+Basically you set a timer for 25 mins, work unhindered for that time, then take a 5 minute break. Repeat 3 more times, then take a 15-20 min break. This has helped me for a few reasons
+ If my task is BORING.. I procrastinate, go read facebook, email a friend.</description>
+    </item>
+    
+    <item>
+      <title>How to get better at programming?</title>
+      <link>/post/2009-09-08-how-to-get-better-at-programming/</link>
+      <pubDate>Tue, 08 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2009-09-08-how-to-get-better-at-programming/</guid>
+      <description>Sometime ago a co-worker asked me what my github name was. I had forgotten..I hadn&#39;t used it in so long! He was surprised that I didn&#39;t have any open source code out there! I said, umm..I haven&#39;t written anything I think someone would want!
+I tend to start projects, work a bit on them and leave them. I find something new and exciting. I get busy with school, work, and life.</description>
+    </item>
+    
+  </channel>
+</rss>

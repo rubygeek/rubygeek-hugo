@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>capybara on </title>
+    <link>/categories/capybara/</link>
+    <description>Recent content in capybara on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 09 Mar 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/capybara/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Book Review:  Application Testing with Capybara</title>
+      <link>/post/2014-03-09-book-review-application-testing-with-capybara/</link>
+      <pubDate>Sun, 09 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2014-03-09-book-review-application-testing-with-capybara/</guid>
+      <description>If you know me, you know I love testing. Model tests, library tests (typically when poro objects) are the most awesome to test and I love it. Controller tests, well, are less fun and testing routes is not bad either. But my least favorite are integration tests.
+Cucumber tests seemed awesome in theory and I remember early days in Chicago ruby group there was development on rspec story runner which I believed was written by Dan North, later rewritten as Cucumber.</description>
+    </item>
+    
+  </channel>
+</rss>

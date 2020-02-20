@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>podcasts on </title>
+    <link>/categories/podcasts/</link>
+    <description>Recent content in podcasts on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 04 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/podcasts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Coding on Car Trips</title>
+      <link>/post/2017-06-04-coding-on-car-trips/</link>
+      <pubDate>Sun, 04 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-06-04-coding-on-car-trips/</guid>
+      <description>I have a big family scattered through the United States, so we do road trips. My husband drives while I code :) On my last road trip I wrote these notes:
+Bring some things to do that don&#39;t require wifi. If you have a codeschool account, download some of the videos to watch. You may not have the bandwidth to do the exercises and play along but you can at least watch the videos.</description>
+    </item>
+    
+    <item>
+      <title>My Favorite Tech Podcasts</title>
+      <link>/post/2017-05-14-my-favorite-tech-podcasts/</link>
+      <pubDate>Sun, 14 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-05-14-my-favorite-tech-podcasts/</guid>
+      <description>I saw someone asking about tech podcasts recently and I named off a few, but I think it is easier to put it in a blog post :) Ordered in roughly the order I am into at the moment :)
+General Tech  The Changelog - open source discussions, interviews with a wide varity of languages DotNetRocks - You might think it is all about .NET but it is not, they cover a wide variety of topics.</description>
+    </item>
+    
+  </channel>
+</rss>

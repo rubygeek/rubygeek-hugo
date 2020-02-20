@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Automation - What to test? - Rubygeek</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Automation - What to test?" />
+<meta property="og:description" content="Recently I&#39;ve been working with a QA team and I&#39;ve learned how to test the browser from them and have came up with some of my own ideas learning from Trial and Error. I have spent close to 1.5 years doing Automation Testing whereas previously I&#39;ve always been a test obsessed developer with little in the way of browser testing.
+This post is focusing on testing the browser and automating the tests." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rubygeek.com/post/2018-07-22-browser-automation-what-to-test/" />
+<meta property="article:published_time" content="2018-07-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-07-22T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Automation - What to test?"/>
+<meta name="twitter:description" content="Recently I&#39;ve been working with a QA team and I&#39;ve learned how to test the browser from them and have came up with some of my own ideas learning from Trial and Error. I have spent close to 1.5 years doing Automation Testing whereas previously I&#39;ve always been a test obsessed developer with little in the way of browser testing.
+This post is focusing on testing the browser and automating the tests."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/main.css" />
+
+	
+		<script src="http://rubygeek.comjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="http://rubygeek.com">Rubygeek</a></h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">22</span>
+							<span class="rest">Jul 2018</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Automation - What to test?</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Recently I've been working with a QA team and I've learned how to test the browser from them and have came up with some of my own ideas learning from Trial and Error. I have spent close to 1.5 years doing Automation Testing whereas previously I've always been a test obsessed developer with little in the way of browser testing.</p>
+<p>This post is focusing on testing the browser and automating the tests.</p>
+<p>I've already wrote about how I <a href="http://www.rubygeek.com/2018/07/05/my-robot-framework-setup/">setup Robot Framework</a>.</p>
+<h3 id="but-what-to-test">But what to test?</h3>
+<p>Here's some questions to think about:</p>
+<p>What button or link on my page makes money either directly or indirectly? It could be a Buy Now button or a subscription to a newsletter. Those are candidates to test.</p>
+<p>Which thing on the page which didn't work, would make us look stupid? Ok you want to have some fancy dropdown that doesn't look like an HTML dropdown. But then it doesn't work. As a user, I would probably be so mad I would leave the site. I don't really have time to waste on stupid sites.</p>
+<p>Things are that easy to test &ndash; why not? Contact us link, about us, FAQ. Make sure those links are going to the right place. 5 minutes of your time gives you the confidence your site is functioning. Test that there is a valid url and when you go to it something shows up to prove you are on the right page, wether a H1 or page title.</p>
+<p>This is easy, test your copyright date if you have it :) 2018 is over half over and I'm still seeing current sites with 2017. Use some scripts to get the current year and check it.</p>
+<p>Test the navigation the user might use, make sure each link is properly labeled and goes to the right page.</p>
+<h3 id="what-do-you-hate-testing-manually">What do you hate testing Manually?</h3>
+<p>If it is a complex work flow of choosing multiple options and certain buttons to get to a certain page. That is tedious and should be automated. Not only do you make it &ldquo;repeatable&rdquo; but you won't forget steps later when you haven't worked on the site for some time.</p>
+<h3 id="what-not-to-test">What not to test?</h3>
+<p>Things that don't break often. Sorting a list alphabetically? Probably not going to break. Computers are good at that. If you insist on testing this on the frontend  a good way to do it is to get all the items in a collection and sort it , then compare the order to what is on the site. Sorting by date is another thing that probably can be covered in unit tests and not worth testing. Remember we are trying to test as a user.</p>
+<p>Things already implemented in unit tests. Most of the time you don't want to double test. For things like cookies/security tokens, etc you do want to double test on both frontend and backend. Just to be sure.</p>
+<h3 id="use-jenkins">Use Jenkins</h3>
+<p>Setup Jenkins to run your tests. I <a href="http://www.rubygeek.com/2018/04/09/setting-up-jenkins-for-robot-framework/">wrote about it</a>. If you did all this work to write them set them up to run and emails you on failures or ping a chat room or something. Jenkins makes it really easy.</p>
+<p>Write a test you want to maintain in future. If you are doing something insanely complex and have a good reason, comment it to save some stress for the next guy working on your tests. Or better yet, just write tests as simply as you can. Err on the side of maintainability instead of cleverness. Your future self will thank you.</p>
+<h3 id="use-ids-or-descriptive-class-names">Use IDs or Descriptive Class Names</h3>
+<p>For the Love of Coding, please .. if your Devs won't give descriptive IDs (ie <code>nav</code>, <code>main</code>, <code>sidebar</code> etc) then at least get them to add some class names that describe what it is and not &ldquo;how&rdquo; .. a &ldquo;how&rdquo; classname might be <code>text-left</code>. Sure thats great for your designer, but that classname doesn't help the QA person.</p>
+<p>If adding IDs or Classnames won't get you what you need, ask them to add custom attributes (allowed now in <a href="https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html">react 16</a>).</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Browser testing is frustrating but it is a much needed type of testing that everyone should have at least in some aspect. Ignoring these tests because they are a PITA is not a great idea. I hope I've given you some ideas on how you might start implementing it on your own sites.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+</body>
+</html>

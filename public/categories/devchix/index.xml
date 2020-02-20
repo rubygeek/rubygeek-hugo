@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devchix on </title>
+    <link>/categories/devchix/</link>
+    <description>Recent content in devchix on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 24 Mar 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/devchix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Finding Ada - Through DevChix!</title>
+      <link>/post/2010-03-24-finding-ada-through-devchix/</link>
+      <pubDate>Wed, 24 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2010-03-24-finding-ada-through-devchix/</guid>
+      <description>For this years Finding Adapost, I would like to highlight several members of DevChix and their contributions and inspirations to the group.
+Desi McAdam- One of the co-founders of DevChix. She is always there to put some perspective on things and teach me about diplomacy. Sometimes I get frustrated and speak without thinking things though :)
+Susan Potter- Very technical and has very good reasons for why and how she does things.</description>
+    </item>
+    
+    <item>
+      <title>How to get better at programming?</title>
+      <link>/post/2009-09-08-how-to-get-better-at-programming/</link>
+      <pubDate>Tue, 08 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2009-09-08-how-to-get-better-at-programming/</guid>
+      <description>Sometime ago a co-worker asked me what my github name was. I had forgotten..I hadn&#39;t used it in so long! He was surprised that I didn&#39;t have any open source code out there! I said, umm..I haven&#39;t written anything I think someone would want!
+I tend to start projects, work a bit on them and leave them. I find something new and exciting. I get busy with school, work, and life.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,4 +1,31 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "hugo-flex"
+title = "RubyGeek"
+languageCode = "en"
+theme = "hugo-theme-prav-master"
+pygmentsCodeFences = "true"
+pygmentsStyle = "perldoc"
+
+
+
+relativeURLs = true
+[params]
+  #title = "Ruby Etc"
+  tagline = "He who enjoys doing and enjoys what he has done is happy. - Fortune Cookie"
+  author = "Nola Stowe"
+
+# If you do not want a social icon, just comment it out
+# Please update the example values!
+[social]
+  email = "mailto:nola@rubygeek.com"
+  #facebook = "https://www.facebook.com/example"
+  twitter = "http://twitter.com/rubygeek"
+  #medium = "https://www.medium.com/@example"
+  github = "https://github.com/rubygeek"
+  #linkedin = "http://uk.linkedin.com/in/example"
+
+
+# Set unsafe mode to allow markdownify to work with goldmark
+# This is important. Please do not delete. It is used to re-render markdown
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

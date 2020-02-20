@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Tagging in Robot Framework - Rubygeek</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Tagging in Robot Framework" />
+<meta property="og:description" content="I talked about the awesome robot framework in the previous post and I wanted to talk about Tagging since I think this is very useful.
+Tagging is one way to group tests so you run a subset of tests. In your test case, add this:
+Homepage Loads [Tags] smoke Open Homepage Element Should Be Visible ${FIND_LOGO} [Teardown] Close Browser Results to run just one tag:
+▶ robot --include smoke youtube.robot ============================================================================== Youtube :: A test to demo testing YouTube ============================================================================== Homepage Loads | PASS | ------------------------------------------------------------------------------ Search Loads Results | PASS | ------------------------------------------------------------------------------ Youtube :: A test to demo testing YouTube | PASS | 2 critical tests, 2 passed, 0 failed 2 tests total, 2 passed, 0 failed ============================================================================== You can create a focus so it is easy to run that one test as you are developing it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rubygeek.com/post/2017-05-23-tagging-in-robot-framework/" />
+<meta property="article:published_time" content="2017-05-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-05-23T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tagging in Robot Framework"/>
+<meta name="twitter:description" content="I talked about the awesome robot framework in the previous post and I wanted to talk about Tagging since I think this is very useful.
+Tagging is one way to group tests so you run a subset of tests. In your test case, add this:
+Homepage Loads [Tags] smoke Open Homepage Element Should Be Visible ${FIND_LOGO} [Teardown] Close Browser Results to run just one tag:
+▶ robot --include smoke youtube.robot ============================================================================== Youtube :: A test to demo testing YouTube ============================================================================== Homepage Loads | PASS | ------------------------------------------------------------------------------ Search Loads Results | PASS | ------------------------------------------------------------------------------ Youtube :: A test to demo testing YouTube | PASS | 2 critical tests, 2 passed, 0 failed 2 tests total, 2 passed, 0 failed ============================================================================== You can create a focus so it is easy to run that one test as you are developing it."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/main.css" />
+
+	
+		<script src="http://rubygeek.comjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="http://rubygeek.com">Rubygeek</a></h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">23</span>
+							<span class="rest">May 2017</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Tagging in Robot Framework</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>I talked about the awesome robot framework <a href="/2017/05/21/automation-testing-with-robot-framework/">in the previous post</a> and I wanted to talk about Tagging since I think this is very useful.</p>
+<p>Tagging is one way to group tests so you run a subset of tests. In your test case, add this:</p>
+<pre><code>Homepage Loads
+  [Tags]  smoke
+  Open Homepage
+  Element Should Be Visible  ${FIND_LOGO}
+  [Teardown]  Close Browser
+</code></pre><p>Results to run just one tag:</p>
+<pre><code>▶ robot --include smoke youtube.robot
+==============================================================================
+Youtube :: A test to demo testing YouTube
+==============================================================================
+Homepage Loads                                                        | PASS |
+------------------------------------------------------------------------------
+Search Loads Results                                                  | PASS |
+------------------------------------------------------------------------------
+Youtube :: A test to demo testing YouTube                             | PASS |
+2 critical tests, 2 passed, 0 failed
+2 tests total, 2 passed, 0 failed
+==============================================================================
+</code></pre><p>You can create a <code>focus</code> so it is easy to run that one test as you are developing it. I have used a similar technique when working on rspec tests. When the test works as you wanted, remove the focus tag. :)</p>
+<p>When you look at the report you can see the tags assigned to teach tests. This report was run on all tests.
+<img src="/images/tags-test.png" alt="Screenshot"></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Exploring Arrays Part 5 - Rubygeek</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Exploring Arrays Part 5" />
+<meta property="og:description" content="BTW Going to use Ruby 2.1.2 from here on out
+Yes, it has been awhile but (who has time to dwell on the past?) I haven&#39;t forgotten I was going through each array class! My last post said next was delete, so let&#39;s get to it!
+delete delete(obj) → item or nil delete(obj) { block } → item or result of block  Ok first one looks pretty straight forward, it returns item if it found it and nil if it doesn&#39;t." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rubygeek.com/post/2014-08-28-exploring-arrays-part-5/" />
+<meta property="article:published_time" content="2014-08-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-08-28T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Exploring Arrays Part 5"/>
+<meta name="twitter:description" content="BTW Going to use Ruby 2.1.2 from here on out
+Yes, it has been awhile but (who has time to dwell on the past?) I haven&#39;t forgotten I was going through each array class! My last post said next was delete, so let&#39;s get to it!
+delete delete(obj) → item or nil delete(obj) { block } → item or result of block  Ok first one looks pretty straight forward, it returns item if it found it and nil if it doesn&#39;t."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://rubygeek.comcss/main.css" />
+
+	
+		<script src="http://rubygeek.comjs/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="http://rubygeek.com">Rubygeek</a></h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">28</span>
+							<span class="rest">Aug 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Exploring Arrays Part 5</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>BTW Going to use Ruby 2.1.2 from here on out</p>
+<p>Yes, it has been awhile but (who has time to dwell on the past?)  I haven't forgotten I was going through each array class! My <a href="/2013/09/02/exploring-arrays-part-4/">last post</a> said next was delete, so let's get to it!</p>
+<h2 id="delete">delete</h2>
+<pre><code>delete(obj) → item or nil 
+delete(obj) { block } → item or result of block
+</code></pre>
+<p>Ok first one looks pretty straight forward, it returns item if it found it and nil if it doesn't. Lets try it out:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> colors <span style="color:#f92672">=</span> <span style="color:#e6db74">%w(</span><span style="color:#e6db74">red blue green yellow</span><span style="color:#e6db74">)</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> colors<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">&gt;&gt;</span> colors
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> colors<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">can&#39;t find me</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">nil</span>
+<span style="color:#f92672">&gt;&gt;</span> colors
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>I deleted &ldquo;blue&rdquo; and it found it because it returned &ldquo;blue&rdquo;. The array is now changed, contains no &ldquo;blue&rdquo;. When you try to delete a value which is not there, &ldquo;can't find me&rdquo; it doesn't throw an exception, just returns nil and does not change the array. What happens if the array is empty? Lets say I made myself a todo list and deleted thing as I finished them:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> todo <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">get up</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">drink coffee</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">study ruby</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">get up</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">drink coffee</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">study ruby</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> todo<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">get up</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">get up</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">&gt;&gt;</span> todo<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">drink coffee</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">drink coffee</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">&gt;&gt;</span> todo<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">study ruby</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">study ruby</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">&gt;&gt;</span> todo<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">do it again</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">nil</span>
+<span style="color:#f92672">&gt;&gt;</span> todo
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#f92672">]</span>
+</code></pre></div><p>So nil is the result when the item is not found OR the array is empty. So, don't depend on the return value too much since it can be nil for multiple reasons. Delete is not a great method for checking off things in your todo list!</p>
+<h2 id="delete-at">delete_at</h2>
+<pre><code>delete_at(index) → obj or nil
+</code></pre>
+<p>Where as delete would delete from the array at the value, delete_at will delete at the specified index.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> colors <span style="color:#f92672">=</span> <span style="color:#e6db74">%w(</span><span style="color:#e6db74">red orange yellow green blue</span><span style="color:#e6db74">)</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">orange</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> colors<span style="color:#f92672">.</span>delete_at(<span style="color:#ae81ff">3</span><span style="color:#f92672"></span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">&gt;&gt;</span> colors
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">orange</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>Pretty simple, let see what happens when you try to delete at an invalid index:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> colors<span style="color:#f92672">.</span>delete_at(<span style="color:#ae81ff">100</span><span style="color:#f92672"></span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">nil</span>
+</code></pre></div><p>So once again, if its an invalid index you get nil just like if there is an invalid value, you get nil. Lets move on!</p>
+<h2 id="delete-if">delete_if</h2>
+<pre><code>delete_if { |item| block } → ary
+delete_if → Enumerator
+</code></pre>
+<p>So looks like if takes a block that tells us what items will be deleted from the array. Lets delete all color names that are greater then a length of 5 characters.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> colors <span style="color:#f92672">=</span> <span style="color:#e6db74">%w(</span><span style="color:#e6db74">red orange yellow green blue</span><span style="color:#e6db74">)</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">orange</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> colors<span style="color:#f92672">.</span>delete_if { <span style="color:#f92672">|</span>color<span style="color:#f92672">|</span> color<span style="color:#f92672">.</span>length <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672"></span>}
+<span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>So it deletes from the array, every element for which the block is true. And its true for values orange, yellow and green. Leaving us with red, green and blue. The docs say its the same as reject! &hellip; yay for being like php!</p>
+<h2 id="drop">drop</h2>
+<pre><code>drop(n) → new_ary
+</code></pre>
+<p>So it takes the array and removes the first N elements and returns the rest.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#e6db74">?&gt;</span> colors <span style="color:#f92672">=</span> <span style="color:#e6db74">%w(</span><span style="color:#e6db74">red orange yellow green blue</span><span style="color:#e6db74">)</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">orange</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> colors<span style="color:#f92672">.</span>drop(<span style="color:#ae81ff">2</span><span style="color:#f92672"></span>)
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>We drop the red and orange elements, and return the rest which is yellow, green and blue. Pretty straightforward, Ok, next method!</p>
+<h2 id="drop-while">drop_while</h2>
+<pre><code>drop_while { |arr| block } → new_ary
+drop_while → Enumerator
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">orange</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> colors<span style="color:#f92672">.</span>drop_while { <span style="color:#f92672">|</span>color<span style="color:#f92672">|</span> color<span style="color:#f92672">.</span>length <span style="color:#f92672">!=</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672"></span>}
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>This one drops all elements for which the block is NIL or False. So if we wanted all the colors whose length was NOT 4, we would only get one element of blue.</p>
+<h2 id="each">each</h2>
+<pre><code>each { |item| block } → ary click to toggle source
+each → Enumerator
+</code></pre>
+<p>This one is easy, we use it all the time..</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> colors <span style="color:#f92672">=</span> <span style="color:#e6db74">%w(</span><span style="color:#e6db74">red orange yellow green blue</span><span style="color:#e6db74">)</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">orange</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> colors<span style="color:#f92672">.</span>each { <span style="color:#f92672">|</span>color<span style="color:#f92672">|</span> puts color }
+red
+orange
+yellow
+green
+blue
+</code></pre></div><h2 id="each-index">each_index</h2>
+<pre><code>each_index { |index| block } → ary click to toggle source
+each_index → Enumerator
+</code></pre>
+<p>Whereas <code>each</code> gives you the value each time, this gives you the index.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;&gt;</span> colors <span style="color:#f92672">=</span> <span style="color:#e6db74">%w(</span><span style="color:#e6db74">red orange yellow green blue</span><span style="color:#e6db74">)</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">orange</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">yellow</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blue</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;&gt;</span> colors<span style="color:#f92672">.</span>each_index { <span style="color:#f92672">|</span>color_index<span style="color:#f92672">|</span> puts color_index }
+<span style="color:#ae81ff">0</span>
+<span style="color:#f92672"></span><span style="color:#ae81ff">1</span>
+<span style="color:#f92672"></span><span style="color:#ae81ff">2</span>
+<span style="color:#f92672"></span><span style="color:#ae81ff">3</span>
+<span style="color:#f92672"></span><span style="color:#ae81ff">4</span>
+<span style="color:#f92672"></span></code></pre></div><h2 id="empty">empty?</h2>
+<pre><code>empty? → true or false
+</code></pre>
+<p>This checks if there are any elements in the array, I experimented with nil, empty or whitespace and the only thing that returns true is no elements.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#e6db74">?&gt;</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">nil</span>,<span style="color:#66d9ef">nil</span><span style="color:#f92672">]</span><span style="color:#f92672">.</span>empty?
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">false</span>
+<span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span><span style="color:#f92672">.</span>empty?
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">false</span>
+<span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span><span style="color:#f92672">.</span>empty?
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">false</span>
+<span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">[</span><span style="color:#f92672">]</span><span style="color:#f92672">.</span>empty?
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">true</span>
+</code></pre></div><p>This seems like a good place to stop, next blog post will start with eql?</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+</body>
+</html>

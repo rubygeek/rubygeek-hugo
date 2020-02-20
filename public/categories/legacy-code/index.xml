@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>legacy code on </title>
+    <link>/categories/legacy-code/</link>
+    <description>Recent content in legacy code on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 16 Oct 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/legacy-code/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Better code through Code Reviews</title>
+      <link>/post/2012-10-16-better-code-through-code-reviews/</link>
+      <pubDate>Tue, 16 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2012-10-16-better-code-through-code-reviews/</guid>
+      <description>For one of my projects we have started doing code reviews. We use github, work in a branch, then submit a pull request for review. Looking at github you can see a nice diff of the changes and you are able to add comments. So github is one way. You could also just use
+git diff master..myawesomebranch And get a decent diff.
+I prefer to code review live if the other person is available in person (screensharing would work too).</description>
+    </item>
+    
+    <item>
+      <title>Digging through sludge</title>
+      <link>/post/2012-08-28-digging-through-sludge/</link>
+      <pubDate>Tue, 28 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2012-08-28-digging-through-sludge/</guid>
+      <description>###Or how to dive into a large untested project and be productive
+This is how I feel sometimes when I come upon a large untested project:
+I&#39;ve been talking to folks and pondering this question..how to be effective (in a new to me) large untested project? I was listening to RubyRogues and they mentioned this talk at Cascadia Ruby (I immedately recognize the name as one of the devchix and they praised her talk Therapeutic Refactoring.</description>
+    </item>
+    
+  </channel>
+</rss>
