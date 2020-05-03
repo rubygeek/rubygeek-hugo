@@ -1,0 +1,18 @@
+{
+  "name": "rubygeek_blog",
+  "version": "1.0.0",
+  "description": "Nolas blog",
+  "private": true,
+  "scripts": {
+    "build": "hugo --cleanDestinationDir",
+    "hugo-server": "hugo server --disableFastRender"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "lunr": "^2.3.8"
+  }
+}
